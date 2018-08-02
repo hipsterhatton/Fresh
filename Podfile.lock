@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - DateTools (1.7.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - IYLoginItem (0.1)
+  - RXPromise (1.0.5)
+
+DEPENDENCIES:
+  - AFNetworking
+  - DateTools
+  - FMDB
+  - IYLoginItem
+  - RXPromise
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  IYLoginItem: e57a86b39d3b9ab0e2fc033adedae01efafd9adf
+  RXPromise: b1e6d6d747db2e0dc53f11ba2a0fbff2456d25e5
+
+PODFILE CHECKSUM: cb63197013b5352c9fc24596d041e9f001a053c9
+
+COCOAPODS: 1.3.1

@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A6FF028E9C22738107F4C89 /* libPods-FreshTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69378BDBD26FF05300C7DF6C /* libPods-FreshTests.a */; };
+		690461677871404F988A73D1 /* libPods-Fresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A491669C3A8779D00B67FDB /* libPods-Fresh.a */; };
+		DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85032113173800B6FE21 /* AppDelegate.m */; };
+		DCDE85072113173800B6FE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85062113173800B6FE21 /* main.m */; };
+		DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDE85082113173800B6FE21 /* Assets.xcassets */; };
+		DCDE850C2113173800B6FE21 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDE850A2113173800B6FE21 /* MainMenu.xib */; };
+		DCDE85172113173800B6FE21 /* FreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85162113173800B6FE21 /* FreshTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCDE85132113173800B6FE21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDE84F72113173800B6FE21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDE84FE2113173800B6FE21;
+			remoteInfo = Fresh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A491669C3A8779D00B67FDB /* libPods-Fresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fresh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D78CA019747BFF0371DC7F0 /* Pods-FreshTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreshTests/Pods-FreshTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A8F6E4F1333577B5DFA0F43 /* Pods-Fresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fresh/Pods-Fresh.debug.xcconfig"; sourceTree = "<group>"; };
+		69378BDBD26FF05300C7DF6C /* libPods-FreshTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreshTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DDC295875586F3266618503 /* Pods-Fresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fresh/Pods-Fresh.release.xcconfig"; sourceTree = "<group>"; };
+		BF97B439730FEDA2A08CE093 /* Pods-FreshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreshTests/Pods-FreshTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DCDE84FF2113173800B6FE21 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDE85022113173800B6FE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCDE85032113173800B6FE21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCDE85062113173800B6FE21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCDE85082113173800B6FE21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCDE850B2113173800B6FE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DCDE850D2113173800B6FE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDE85122113173800B6FE21 /* FreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDE85162113173800B6FE21 /* FreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshTests.m; sourceTree = "<group>"; };
+		DCDE85182113173800B6FE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCDE84FC2113173800B6FE21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690461677871404F988A73D1 /* libPods-Fresh.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDE850F2113173800B6FE21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6FF028E9C22738107F4C89 /* libPods-FreshTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E428BA5C2516C37B341CCF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A491669C3A8779D00B67FDB /* libPods-Fresh.a */,
+				69378BDBD26FF05300C7DF6C /* libPods-FreshTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCDE84F62113173800B6FE21 = {
+			isa = PBXGroup;
+			children = (
+				DCDE85012113173800B6FE21 /* Fresh */,
+				DCDE85152113173800B6FE21 /* FreshTests */,
+				DCDE85002113173800B6FE21 /* Products */,
+				E6C76DBC91BF678040402B63 /* Pods */,
+				6E428BA5C2516C37B341CCF8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DCDE85002113173800B6FE21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCDE84FF2113173800B6FE21 /* Fresh.app */,
+				DCDE85122113173800B6FE21 /* FreshTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCDE85012113173800B6FE21 /* Fresh */ = {
+			isa = PBXGroup;
+			children = (
+				DCDE85022113173800B6FE21 /* AppDelegate.h */,
+				DCDE85032113173800B6FE21 /* AppDelegate.m */,
+				DCDE85082113173800B6FE21 /* Assets.xcassets */,
+				DCDE850A2113173800B6FE21 /* MainMenu.xib */,
+				DCDE850D2113173800B6FE21 /* Info.plist */,
+				DCDE85052113173800B6FE21 /* Supporting Files */,
+			);
+			path = Fresh;
+			sourceTree = "<group>";
+		};
+		DCDE85052113173800B6FE21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCDE85062113173800B6FE21 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCDE85152113173800B6FE21 /* FreshTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDE85162113173800B6FE21 /* FreshTests.m */,
+				DCDE85182113173800B6FE21 /* Info.plist */,
+			);
+			path = FreshTests;
+			sourceTree = "<group>";
+		};
+		E6C76DBC91BF678040402B63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A8F6E4F1333577B5DFA0F43 /* Pods-Fresh.debug.xcconfig */,
+				6DDC295875586F3266618503 /* Pods-Fresh.release.xcconfig */,
+				BF97B439730FEDA2A08CE093 /* Pods-FreshTests.debug.xcconfig */,
+				1D78CA019747BFF0371DC7F0 /* Pods-FreshTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCDE84FE2113173800B6FE21 /* Fresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDE851B2113173800B6FE21 /* Build configuration list for PBXNativeTarget "Fresh" */;
+			buildPhases = (
+				EAB2B6ED33275029BB783349 /* [CP] Check Pods Manifest.lock */,
+				DCDE84FB2113173800B6FE21 /* Sources */,
+				DCDE84FC2113173800B6FE21 /* Frameworks */,
+				DCDE84FD2113173800B6FE21 /* Resources */,
+				226D619069B24C54CD3F9AEB /* [CP] Embed Pods Frameworks */,
+				8C6935EAEB059F7643C56C55 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fresh;
+			productName = Fresh;
+			productReference = DCDE84FF2113173800B6FE21 /* Fresh.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCDE85112113173800B6FE21 /* FreshTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDE851E2113173800B6FE21 /* Build configuration list for PBXNativeTarget "FreshTests" */;
+			buildPhases = (
+				A36BE32DF8528EA35A3469AB /* [CP] Check Pods Manifest.lock */,
+				DCDE850E2113173800B6FE21 /* Sources */,
+				DCDE850F2113173800B6FE21 /* Frameworks */,
+				DCDE85102113173800B6FE21 /* Resources */,
+				27AB48411E86BF0A189CC3E4 /* [CP] Embed Pods Frameworks */,
+				356C065DEDF4CCA3516D1C54 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDE85142113173800B6FE21 /* PBXTargetDependency */,
+			);
+			name = FreshTests;
+			productName = FreshTests;
+			productReference = DCDE85122113173800B6FE21 /* FreshTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCDE84F72113173800B6FE21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Stephen Hatton";
+				TargetAttributes = {
+					DCDE84FE2113173800B6FE21 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					DCDE85112113173800B6FE21 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DCDE84FE2113173800B6FE21;
+					};
+				};
+			};
+			buildConfigurationList = DCDE84FA2113173800B6FE21 /* Build configuration list for PBXProject "Fresh" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCDE84F62113173800B6FE21;
+			productRefGroup = DCDE85002113173800B6FE21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCDE84FE2113173800B6FE21 /* Fresh */,
+				DCDE85112113173800B6FE21 /* FreshTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCDE84FD2113173800B6FE21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */,
+				DCDE850C2113173800B6FE21 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDE85102113173800B6FE21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		226D619069B24C54CD3F9AEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fresh/Pods-Fresh-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27AB48411E86BF0A189CC3E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreshTests/Pods-FreshTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		356C065DEDF4CCA3516D1C54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreshTests/Pods-FreshTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C6935EAEB059F7643C56C55 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fresh/Pods-Fresh-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fresh/Pods-Fresh-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A36BE32DF8528EA35A3469AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FreshTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB2B6ED33275029BB783349 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fresh-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCDE84FB2113173800B6FE21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDE85072113173800B6FE21 /* main.m in Sources */,
+				DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDE850E2113173800B6FE21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDE85172113173800B6FE21 /* FreshTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCDE85142113173800B6FE21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDE84FE2113173800B6FE21 /* Fresh */;
+			targetProxy = DCDE85132113173800B6FE21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCDE850A2113173800B6FE21 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDE850B2113173800B6FE21 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCDE85192113173800B6FE21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DCDE851A2113173800B6FE21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DCDE851C2113173800B6FE21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A8F6E4F1333577B5DFA0F43 /* Pods-Fresh.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fresh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = StephenHatton.Fresh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DCDE851D2113173800B6FE21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DDC295875586F3266618503 /* Pods-Fresh.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fresh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = StephenHatton.Fresh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DCDE851F2113173800B6FE21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF97B439730FEDA2A08CE093 /* Pods-FreshTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FreshTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = StephenHatton.FreshTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fresh.app/Contents/MacOS/Fresh";
+			};
+			name = Debug;
+		};
+		DCDE85202113173800B6FE21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D78CA019747BFF0371DC7F0 /* Pods-FreshTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FreshTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = StephenHatton.FreshTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fresh.app/Contents/MacOS/Fresh";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCDE84FA2113173800B6FE21 /* Build configuration list for PBXProject "Fresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDE85192113173800B6FE21 /* Debug */,
+				DCDE851A2113173800B6FE21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDE851B2113173800B6FE21 /* Build configuration list for PBXNativeTarget "Fresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDE851C2113173800B6FE21 /* Debug */,
+				DCDE851D2113173800B6FE21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCDE851E2113173800B6FE21 /* Build configuration list for PBXNativeTarget "FreshTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDE851F2113173800B6FE21 /* Debug */,
+				DCDE85202113173800B6FE21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCDE84F72113173800B6FE21 /* Project object */;
+}
