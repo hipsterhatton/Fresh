@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		3A6FF028E9C22738107F4C89 /* libPods-FreshTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69378BDBD26FF05300C7DF6C /* libPods-FreshTests.a */; };
 		690461677871404F988A73D1 /* libPods-Fresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A491669C3A8779D00B67FDB /* libPods-Fresh.a */; };
+		DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
+		DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
+		DC372ABC2113191500DC2DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABB2113191500DC2DFC /* Reachability.m */; };
+		DC372ABD2113191500DC2DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABB2113191500DC2DFC /* Reachability.m */; };
+		DC372AC22113192900DC2DFC /* Shuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABF2113192900DC2DFC /* Shuttle.m */; };
+		DC372AC32113192900DC2DFC /* Shuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABF2113192900DC2DFC /* Shuttle.m */; };
+		DC372AC42113192900DC2DFC /* ShuttleMockRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */; };
+		DC372AC52113192900DC2DFC /* ShuttleMockRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */; };
+		DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC72113193800DC2DFC /* SDMacVersion.m */; };
+		DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC72113193800DC2DFC /* SDMacVersion.m */; };
 		DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85032113173800B6FE21 /* AppDelegate.m */; };
 		DCDE85072113173800B6FE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85062113173800B6FE21 /* main.m */; };
 		DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDE85082113173800B6FE21 /* Assets.xcassets */; };
@@ -33,6 +43,16 @@
 		69378BDBD26FF05300C7DF6C /* libPods-FreshTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreshTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DDC295875586F3266618503 /* Pods-Fresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fresh/Pods-Fresh.release.xcconfig"; sourceTree = "<group>"; };
 		BF97B439730FEDA2A08CE093 /* Pods-FreshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreshTests/Pods-FreshTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC372AB2211318ED00DC2DFC /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserDefaults.h; sourceTree = "<group>"; };
+		DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDefaults.m; sourceTree = "<group>"; };
+		DC372ABA2113191500DC2DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DC372ABB2113191500DC2DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DC372ABE2113192900DC2DFC /* Shuttle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuttle.h; sourceTree = "<group>"; };
+		DC372ABF2113192900DC2DFC /* Shuttle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shuttle.m; sourceTree = "<group>"; };
+		DC372AC02113192900DC2DFC /* ShuttleMockRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShuttleMockRequests.h; sourceTree = "<group>"; };
+		DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShuttleMockRequests.m; sourceTree = "<group>"; };
+		DC372AC62113193800DC2DFC /* SDMacVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDMacVersion.h; sourceTree = "<group>"; };
+		DC372AC72113193800DC2DFC /* SDMacVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDMacVersion.m; sourceTree = "<group>"; };
 		DCDE84FF2113173800B6FE21 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDE85022113173800B6FE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCDE85032113173800B6FE21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +94,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC372AAD2113185E00DC2DFC /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				DC372AAE2113189600DC2DFC /* GVUserDefaults */,
+				DC372AAF2113189C00DC2DFC /* Reachability */,
+				DC372AB0211318A300DC2DFC /* SDVersion */,
+				DC372AB1211318A900DC2DFC /* Shuttle */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		DC372AAE2113189600DC2DFC /* GVUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				DC372AB2211318ED00DC2DFC /* GVUserDefaults.h */,
+				DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */,
+			);
+			name = GVUserDefaults;
+			sourceTree = "<group>";
+		};
+		DC372AAF2113189C00DC2DFC /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				DC372ABA2113191500DC2DFC /* Reachability.h */,
+				DC372ABB2113191500DC2DFC /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		DC372AB0211318A300DC2DFC /* SDVersion */ = {
+			isa = PBXGroup;
+			children = (
+				DC372AC62113193800DC2DFC /* SDMacVersion.h */,
+				DC372AC72113193800DC2DFC /* SDMacVersion.m */,
+			);
+			name = SDVersion;
+			sourceTree = "<group>";
+		};
+		DC372AB1211318A900DC2DFC /* Shuttle */ = {
+			isa = PBXGroup;
+			children = (
+				DC372ABE2113192900DC2DFC /* Shuttle.h */,
+				DC372ABF2113192900DC2DFC /* Shuttle.m */,
+				DC372AC02113192900DC2DFC /* ShuttleMockRequests.h */,
+				DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */,
+			);
+			name = Shuttle;
+			sourceTree = "<group>";
+		};
 		DCDE84F62113173800B6FE21 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +168,7 @@
 			children = (
 				DCDE85022113173800B6FE21 /* AppDelegate.h */,
 				DCDE85032113173800B6FE21 /* AppDelegate.m */,
+				DC372AAD2113185E00DC2DFC /* Libs */,
 				DCDE85082113173800B6FE21 /* Assets.xcassets */,
 				DCDE850A2113173800B6FE21 /* MainMenu.xib */,
 				DCDE850D2113173800B6FE21 /* Info.plist */,
@@ -343,7 +413,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDE85072113173800B6FE21 /* main.m in Sources */,
+				DC372AC42113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
 				DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */,
+				DC372ABC2113191500DC2DFC /* Reachability.m in Sources */,
+				DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
+				DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */,
+				DC372AC22113192900DC2DFC /* Shuttle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +427,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDE85172113173800B6FE21 /* FreshTests.m in Sources */,
+				DC372AC32113192900DC2DFC /* Shuttle.m in Sources */,
+				DC372ABD2113191500DC2DFC /* Reachability.m in Sources */,
+				DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
+				DC372AC52113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
+				DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +615,7 @@
 				DCDE851D2113173800B6FE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCDE851E2113173800B6FE21 /* Build configuration list for PBXNativeTarget "FreshTests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +624,7 @@
 				DCDE85202113173800B6FE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
