@@ -52,4 +52,9 @@
     [self setupScreensWithNotifications:NO];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end
