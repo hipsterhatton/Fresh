@@ -16,6 +16,7 @@
     }
     
     [self setupScreensWithNotifications:YES];
+    [self setupServices];
     return self;
 }
 
@@ -50,6 +51,17 @@
     
     NSLog(@"Screen has changed...");
     [self setupScreensWithNotifications:NO];
+}
+
+- (void)setupServices
+{
+    _fileAndDirService = [FRSHFileAndDirService new];
+    _wallpaperAPI = [FRSHUnsplashAPI new];
+}
+
+- (void)downloadWallpaperForScreen:(FRSHScreen *)screen
+{
+    
 }
 
 - (void)dealloc

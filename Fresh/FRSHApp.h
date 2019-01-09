@@ -11,8 +11,13 @@
 
 #import "FRSHScreen.h"
 
+#import "FRSHFileAndDirService.h"
+#import "FRSHUnsplashAPI.h"
+
 @interface FRSHApp : NSObject
 
 @property (nonatomic, retain) NSMutableArray *screens;
+@property (nonatomic, retain) FRSHFileAndDirService *fileAndDirService;
+@property (nonatomic, retain) FRSHUnsplashAPI *wallpaperAPI;
 
 @end

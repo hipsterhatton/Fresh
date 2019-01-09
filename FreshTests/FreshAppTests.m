@@ -45,4 +45,11 @@
     XCTAssertNotEqualObjects(_old, _new);
 }
 
+- (void)testSservicesAreSetup
+{
+    XCTAssertNotNil(_app);
+    XCTAssertNotNil(_app.fileAndDirService);
+    XCTAssertNotNil(_app.wallpaperAPI);
+}
+
 @end
