@@ -102,4 +102,29 @@
     [self waitForExpectationsWithTimeout:60 handler:nil];
 }
 
+- (void)testThreeDownloadWallpaper
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_app downloadWallpaperForScreen:_app.screens.firstObject]
+    
+    .then(^id (id blank) {
+        NSArray *listOfFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Users/Stephen/Library/Application Support/Fresh/Downloads/" error:nil];
+        XCTAssertEqual(listOfFiles.count, 1);
+        XCTAssertFalse([listOfFiles[0] rangeOfString:[_app.screens.firstObject getScreenID][@"uuid"]].location == NSNotFound);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *response) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNil(error);
+    });
+    
+    [self waitForExpectationsWithTimeout:60 handler:nil];
+}
+
 @end
