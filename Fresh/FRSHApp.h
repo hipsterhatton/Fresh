@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
+#import "FRSHScreen.h"
+
 @interface FRSHApp : NSObject
 
 @property (nonatomic, retain) NSMutableArray *screens;

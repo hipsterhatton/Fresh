@@ -28,7 +28,8 @@
     [_screens removeAllObjects];
     
     for (int _a = 0; _a < [[NSScreen screens] count]; _a++) {
-        [_screens addObject:[NSScreen screens][_a]];
+        FRSHScreen *_screen = [[FRSHScreen alloc] initWithScreen:[NSScreen screens][_a]];
+        [_screens addObject:_screen];
     }
     
     if (!setupNotification) {
