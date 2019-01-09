@@ -18,6 +18,7 @@
 		DC2AA50A21E60C0400EA8F1F /* FRSHScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50921E60C0400EA8F1F /* FRSHScreen.m */; };
 		DC2AA50C21E60E0900EA8F1F /* FreshScreenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */; };
 		DC2AA51021E6127700EA8F1F /* FRSHUnsplashAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50F21E6127700EA8F1F /* FRSHUnsplashAPI.m */; };
+		DC2AA51221E612D700EA8F1F /* FreshUnsplashApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA51121E612D700EA8F1F /* FreshUnsplashApiTests.m */; };
 		DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
 		DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
 		DC372ABC2113191500DC2DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABB2113191500DC2DFC /* Reachability.m */; };
@@ -65,6 +66,7 @@
 		DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshScreenTests.m; sourceTree = "<group>"; };
 		DC2AA50E21E6127700EA8F1F /* FRSHUnsplashAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSHUnsplashAPI.h; path = "Services/Unsplash API/FRSHUnsplashAPI.h"; sourceTree = "<group>"; };
 		DC2AA50F21E6127700EA8F1F /* FRSHUnsplashAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSHUnsplashAPI.m; path = "Services/Unsplash API/FRSHUnsplashAPI.m"; sourceTree = "<group>"; };
+		DC2AA51121E612D700EA8F1F /* FreshUnsplashApiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshUnsplashApiTests.m; sourceTree = "<group>"; };
 		DC372AB2211318ED00DC2DFC /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVUserDefaults.h; path = Libs/GVUserDefaults/GVUserDefaults.h; sourceTree = "<group>"; };
 		DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVUserDefaults.m; path = Libs/GVUserDefaults/GVUserDefaults.m; sourceTree = "<group>"; };
 		DC372ABA2113191500DC2DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Libs/Reachability/Reachability.h; sourceTree = "<group>"; };
@@ -261,8 +263,9 @@
 			isa = PBXGroup;
 			children = (
 				DC2AA50421E6097300EA8F1F /* FreshAppTests.m */,
-				DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */,
+				DC2AA51121E612D700EA8F1F /* FreshUnsplashApiTests.m */,
 				DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */,
+				DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */,
 				DCDE85162113173800B6FE21 /* FreshTests.m */,
 				DCDE85182113173800B6FE21 /* Info.plist */,
 			);
@@ -510,6 +513,7 @@
 				DCDE85172113173800B6FE21 /* FreshTests.m in Sources */,
 				DC372AC32113192900DC2DFC /* Shuttle.m in Sources */,
 				DC372ABD2113191500DC2DFC /* Reachability.m in Sources */,
+				DC2AA51221E612D700EA8F1F /* FreshUnsplashApiTests.m in Sources */,
 				DC2AA4FC21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m in Sources */,
 				DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC52113192900DC2DFC /* ShuttleMockRequests.m in Sources */,

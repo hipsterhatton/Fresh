@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RXPromise/RXPromise.h>
+
+#import "FRSHScreen.h"
+#import "Shuttle.h"
 
 @interface FRSHUnsplashAPI : NSObject
 
+@property (nonatomic, retain) Shuttle *shuttle;
+
+- (NSString *)getRandomWallpaperFromCollections:(FRSHScreen *)screen;
 @end
