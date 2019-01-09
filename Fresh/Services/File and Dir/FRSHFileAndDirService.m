@@ -114,7 +114,38 @@
     .then(^id(NSImage *rawImage) {
         NSString *_imageName = [NSString stringWithFormat:@"%@.jpg", filename];
         return [self writeImageDataToDiskWithFilename:_imageName fileData:[rawImage TIFFRepresentation]];
+    }, nil)
+    
+    .then(^id(id blank) {
+        return [self deleteOldDownloadedWallpapers:filename];
     }, nil);
+}
+
+- (NSError *)deleteOldDownloadedWallpapers:(NSString *)wallpaperFileName
+{
+    NSError *_error = nil;
+    NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, nil];
+    NSArray *_listOfFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_path error:&_error];
+    __block NSString *_str;
+    
+    if (_error) {
+        return _error;
+    }
+    
+    wallpaperFileName = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [wallpaperFileName stringByAppendingString:@".jpg"]];
+    
+    for (int _a = 0; _a < [_listOfFiles count]; _a++) {
+        _str = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, _listOfFiles[_a]];
+        
+        if (![_str isEqualToString:wallpaperFileName]) {
+            [[NSFileManager defaultManager] removeItemAtPath:_str error:&_error];
+            if (_error) {
+                break;
+            }
+        }
+    }
+    
+    return _error;
 }
 
 @end

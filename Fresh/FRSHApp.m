@@ -59,9 +59,28 @@
     _wallpaperAPI = [FRSHUnsplashAPI new];
 }
 
-- (void)downloadWallpaperForScreen:(FRSHScreen *)screen
+- (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen
 {
+    return [_wallpaperAPI getWallpaperURL:screen]
     
+    .then(^id (NSString *wallpaperURL) {
+        NSLog(@"Wallpaper URL:  %@", wallpaperURL);
+        NSLog(@"Wallpaper Name: %@", [self getWallpaperFileName:screen]);
+        return [_fileAndDirService downloadImageFromURL:wallpaperURL filename:[self getWallpaperFileName:screen]];
+    }, nil)
+    
+    .then(nil, ^id(NSError* error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+        return nil;
+    });
+}
+
+- (NSString *)getWallpaperFileName:(FRSHScreen *)screen
+{
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH-mm-ss"];
+    
+    return [NSString stringWithFormat:@"%@_%@", [screen getScreenID][@"uuid"], [dateFormatter stringFromDate:[NSDate date]]];
 }
 
 - (void)dealloc

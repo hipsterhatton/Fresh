@@ -20,4 +20,6 @@
 @property (nonatomic, retain) FRSHFileAndDirService *fileAndDirService;
 @property (nonatomic, retain) FRSHUnsplashAPI *wallpaperAPI;
 
+- (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen;
+
 @end
