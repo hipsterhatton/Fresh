@@ -76,4 +76,57 @@
     [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
+- (void)testDownloadImageFromURLNoInternetConnection
+{
+    [_service.shuttle activateMockRequests];
+    [_service.shuttle ifURLContains:@[@"image_url.com"] thenReturn:[NSImage imageNamed:@"sample_image.png"]];
+    [_service.shuttle setConnectionType:None];
+    
+    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg"]
+    
+    .then(^id (NSDictionary *response) {
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNotNil(error);
+        return error;
+    });
+}
+
+- (void)testDownloadImageFromURLUnknownInternetConnection
+{
+    [_service.shuttle activateMockRequests];
+    [_service.shuttle ifURLContains:@[@"image_url.com"] thenReturn:[NSImage imageNamed:@"sample_image.png"]];
+    [_service.shuttle setConnectionType:Unknown];
+    
+    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg"]
+    
+    .then(^id (NSDictionary *response) {
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNotNil(error);
+        return error;
+    });
+}
+
+- (void)testDownloadImageFromURLConnectionTimeout
+{
+    [_service.shuttle activateMockRequests];
+    [_service.shuttle.mockRequests setRequestTimeout:YES];
+    
+    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg"]
+    
+    .then(^id (NSDictionary *response) {
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNotNil(error);
+        return error;
+    });
+}
+
 @end
