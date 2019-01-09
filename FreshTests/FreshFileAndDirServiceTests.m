@@ -42,6 +42,11 @@
 
 - (void)testExistingDirectories
 {
+    NSString *content = @"Put this in a file please.";
+    NSData *fileContents = [content dataUsingEncoding:NSUTF8StringEncoding];
+    [[NSFileManager defaultManager] createFileAtPath:@"/Users/Stephen/Library/Application Support/Fresh/foo.txt" contents:fileContents attributes:nil];
+    [[NSFileManager defaultManager] createFileAtPath:@"/Users/Stephen/Library/Application Support/Fresh/Downloads/foo.txt" contents:fileContents attributes:nil];
+    
     _service = nil;
     _service = [FRSHFileAndDirService new];
     
@@ -50,6 +55,9 @@
     XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:@"/Users/Stephen/Library/Application Support/Fresh/Downloads" isDirectory:&isDir]);
     isDir = NO;
     XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:@"/Users/Stephen/Library/Application Support/Fresh/Fresh.sqlite" isDirectory:&isDir]);
+    
+    XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:@"/Users/Stephen/Library/Application Support/Fresh/foo.txt" isDirectory:&isDir]);
+    XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:@"/Users/Stephen/Library/Application Support/Fresh/Downloads/foo.txt" isDirectory:&isDir]);
 }
 
 - (void)testDownloadImageFromURL
