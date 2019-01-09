@@ -13,6 +13,8 @@
 		DC2AA4FC21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */; };
 		DC2AA4FE21E5FEAC00EA8F1F /* Fresh.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC2AA4FD21E5FEAC00EA8F1F /* Fresh.sqlite */; };
 		DC2AA50021E606BC00EA8F1F /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2AA4FF21E606BC00EA8F1F /* sample_image.png */; };
+		DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50221E6092500EA8F1F /* FRSHApp.m */; };
+		DC2AA50521E6097300EA8F1F /* FreshAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50421E6097300EA8F1F /* FreshAppTests.m */; };
 		DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
 		DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
 		DC372ABC2113191500DC2DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABB2113191500DC2DFC /* Reachability.m */; };
@@ -52,6 +54,9 @@
 		DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshFileAndDirServiceTests.m; sourceTree = "<group>"; };
 		DC2AA4FD21E5FEAC00EA8F1F /* Fresh.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fresh.sqlite; sourceTree = "<group>"; };
 		DC2AA4FF21E606BC00EA8F1F /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_image.png; sourceTree = "<group>"; };
+		DC2AA50121E6092500EA8F1F /* FRSHApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSHApp.h; sourceTree = "<group>"; };
+		DC2AA50221E6092500EA8F1F /* FRSHApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSHApp.m; sourceTree = "<group>"; };
+		DC2AA50421E6097300EA8F1F /* FreshAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshAppTests.m; sourceTree = "<group>"; };
 		DC372AB2211318ED00DC2DFC /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVUserDefaults.h; path = Libs/GVUserDefaults/GVUserDefaults.h; sourceTree = "<group>"; };
 		DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVUserDefaults.m; path = Libs/GVUserDefaults/GVUserDefaults.m; sourceTree = "<group>"; };
 		DC372ABA2113191500DC2DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Libs/Reachability/Reachability.h; sourceTree = "<group>"; };
@@ -194,6 +199,8 @@
 			children = (
 				DCDE85022113173800B6FE21 /* AppDelegate.h */,
 				DCDE85032113173800B6FE21 /* AppDelegate.m */,
+				DC2AA50121E6092500EA8F1F /* FRSHApp.h */,
+				DC2AA50221E6092500EA8F1F /* FRSHApp.m */,
 				DC2AA4F621E5F9BA00EA8F1F /* Services */,
 				DC372AAD2113185E00DC2DFC /* Libs */,
 				DCDE85082113173800B6FE21 /* Assets.xcassets */,
@@ -217,6 +224,7 @@
 		DCDE85152113173800B6FE21 /* FreshTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC2AA50421E6097300EA8F1F /* FreshAppTests.m */,
 				DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */,
 				DCDE85162113173800B6FE21 /* FreshTests.m */,
 				DCDE85182113173800B6FE21 /* Info.plist */,
@@ -452,6 +460,7 @@
 				DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */,
 				DC372AC22113192900DC2DFC /* Shuttle.m in Sources */,
+				DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +474,7 @@
 				DC2AA4FC21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m in Sources */,
 				DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC52113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
+				DC2AA50521E6097300EA8F1F /* FreshAppTests.m in Sources */,
 				DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,33 +7,42 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "FRSHApp.h"
 
 @interface FreshAppTests : XCTestCase
-
+@property (nonatomic, retain) FRSHApp *app;
 @end
 
 @implementation FreshAppTests
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _app = [FRSHApp new];
 }
 
-- (void)tearDown {
+- (void)tearDown
+{
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testScreensAreSetup
+{
+    XCTAssertNotNil(_app);
+    XCTAssertNotNil(_app.screens);
+    XCTAssertGreaterThanOrEqual(_app.screens.count, 1);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testFireScreenChangeObservation
+{
+    NSObject *_old = _app.screens[0];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NSApplicationDidChangeScreenParametersNotification object:self];
+    
+    NSObject *_new = _app.screens[0];
+    
+    XCTAssertNotEqualObjects(_old, _new);
 }
 
 @end
