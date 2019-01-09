@@ -15,6 +15,7 @@
 		DC2AA50021E606BC00EA8F1F /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2AA4FF21E606BC00EA8F1F /* sample_image.png */; };
 		DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50221E6092500EA8F1F /* FRSHApp.m */; };
 		DC2AA50521E6097300EA8F1F /* FreshAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50421E6097300EA8F1F /* FreshAppTests.m */; };
+		DC2AA50A21E60C0400EA8F1F /* FRSHScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50921E60C0400EA8F1F /* FRSHScreen.m */; };
 		DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
 		DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */; };
 		DC372ABC2113191500DC2DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372ABB2113191500DC2DFC /* Reachability.m */; };
@@ -57,6 +58,8 @@
 		DC2AA50121E6092500EA8F1F /* FRSHApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSHApp.h; sourceTree = "<group>"; };
 		DC2AA50221E6092500EA8F1F /* FRSHApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSHApp.m; sourceTree = "<group>"; };
 		DC2AA50421E6097300EA8F1F /* FreshAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshAppTests.m; sourceTree = "<group>"; };
+		DC2AA50821E60C0400EA8F1F /* FRSHScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSHScreen.h; path = Models/Screen/FRSHScreen.h; sourceTree = "<group>"; };
+		DC2AA50921E60C0400EA8F1F /* FRSHScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSHScreen.m; path = Models/Screen/FRSHScreen.m; sourceTree = "<group>"; };
 		DC372AB2211318ED00DC2DFC /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVUserDefaults.h; path = Libs/GVUserDefaults/GVUserDefaults.h; sourceTree = "<group>"; };
 		DC372AB3211318ED00DC2DFC /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVUserDefaults.m; path = Libs/GVUserDefaults/GVUserDefaults.m; sourceTree = "<group>"; };
 		DC372ABA2113191500DC2DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Libs/Reachability/Reachability.h; sourceTree = "<group>"; };
@@ -123,6 +126,23 @@
 				DC2AA4F921E5F9E100EA8F1F /* FRSHFileAndDirService.m */,
 			);
 			name = "File and Dir";
+			sourceTree = "<group>";
+		};
+		DC2AA50621E60BDD00EA8F1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC2AA50721E60BE300EA8F1F /* Screen */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DC2AA50721E60BE300EA8F1F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DC2AA50821E60C0400EA8F1F /* FRSHScreen.h */,
+				DC2AA50921E60C0400EA8F1F /* FRSHScreen.m */,
+			);
+			name = Screen;
 			sourceTree = "<group>";
 		};
 		DC372AAD2113185E00DC2DFC /* Libs */ = {
@@ -201,6 +221,7 @@
 				DCDE85032113173800B6FE21 /* AppDelegate.m */,
 				DC2AA50121E6092500EA8F1F /* FRSHApp.h */,
 				DC2AA50221E6092500EA8F1F /* FRSHApp.m */,
+				DC2AA50621E60BDD00EA8F1F /* Models */,
 				DC2AA4F621E5F9BA00EA8F1F /* Services */,
 				DC372AAD2113185E00DC2DFC /* Libs */,
 				DCDE85082113173800B6FE21 /* Assets.xcassets */,
@@ -452,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2AA50A21E60C0400EA8F1F /* FRSHScreen.m in Sources */,
 				DC2AA4FA21E5F9E100EA8F1F /* FRSHFileAndDirService.m in Sources */,
 				DCDE85072113173800B6FE21 /* main.m in Sources */,
 				DC372AC42113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
