@@ -16,5 +16,5 @@
 
 @property (nonatomic, retain) Shuttle *shuttle;
 
-- (NSString *)getRandomWallpaperFromCollections:(FRSHScreen *)screen;
+- (RXPromise *)getWallpaperURL:(FRSHScreen *)screen;
 @end

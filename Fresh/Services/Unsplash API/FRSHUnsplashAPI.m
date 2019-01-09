@@ -26,7 +26,21 @@
 ////
 // Return URL of a random wallpaper from collection(s)
 //
-- (NSString *)getRandomWallpaperFromCollections:(FRSHScreen *)screen
+- (RXPromise *)getWallpaperURL:(FRSHScreen *)screen
+{
+    return [self.shuttle launch:GET :JSON :[self constructWallpaperURL:screen] :nil]
+    
+    .then(^id (NSDictionary *rawJSON) {
+        return rawJSON[@"urls"][@"custom"];
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+        return error;
+    });
+}
+
+- (NSString *)constructWallpaperURL:(FRSHScreen *)screen
 {
     int _width = [[screen getScreenDimensions][@"width"] intValue];
     int _height = [[screen getScreenDimensions][@"height"] intValue];
