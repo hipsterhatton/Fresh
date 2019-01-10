@@ -10,11 +10,13 @@
 #import <Foundation/Foundation.h>
 
 #import "FRSHScreen.h"
+#import "FRSHSchedule.h"
 #import "SDMacVersion.h"
 
 @interface FRSHScreen : NSObject
 
 @property (nonatomic, retain) NSScreen *screen;
+@property (nonatomic, retain) FRSHSchedule *schedule;
 
 - (id)initWithScreen:(NSScreen *)screen;
 - (NSDictionary *)getScreenID;

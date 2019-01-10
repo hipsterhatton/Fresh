@@ -21,7 +21,7 @@ extern CGSConnection _CGSDefaultConnection(void);
 {
     if (self = [super init]) {
         _screen = screen;
-//        _schedule = [[FRSHSchedule alloc] initWithScreenID:[self getScreenID][@"id"]];
+        _schedule = [[FRSHSchedule alloc] initWithScreenID:[self getScreenID][@"id"]];
     }
     return self;
 }

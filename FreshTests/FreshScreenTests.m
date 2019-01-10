@@ -33,6 +33,11 @@
     XCTAssertNotNil(_screen);
 }
 
+- (void)testInitWithSchedule
+{
+    XCTAssertNotNil([_screen schedule]);
+}
+
 - (void)testGetScreenID
 {
     XCTAssertNotNil([_screen getScreenID]);
