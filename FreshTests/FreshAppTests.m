@@ -155,4 +155,9 @@
     [self waitForExpectationsWithTimeout:60 handler:nil];
 }
 
+- (void)testTimerIsSetup
+{
+    XCTAssertNotNil([_app checkScheduleTimer]);
+}
+
 @end

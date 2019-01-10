@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSMutableArray *screens;
 @property (nonatomic, retain) FRSHFileAndDirService *fileAndDirService;
 @property (nonatomic, retain) FRSHUnsplashAPI *wallpaperAPI;
+@property (nonatomic, retain) NSTimer *checkScheduleTimer;
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen;
 

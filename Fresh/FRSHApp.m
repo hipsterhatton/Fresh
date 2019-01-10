@@ -8,6 +8,8 @@
 
 #import "FRSHApp.h"
 
+#define SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS    60
+
 @implementation FRSHApp
 
 - (id)init
@@ -17,6 +19,7 @@
     
     [self setupScreensWithNotifications:YES];
     [self setupServices];
+    [self startTimer];
     return self;
 }
 
@@ -87,6 +90,34 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH-mm-ss"];
     
     return [NSString stringWithFormat:@"%@_%@", [screen getScreenID][@"uuid"], [dateFormatter stringFromDate:[NSDate date]]];
+}
+
+- (void)startTimer
+{
+    _checkScheduleTimer = [NSTimer scheduledTimerWithTimeInterval:SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS
+                                                           target:self
+                                                         selector:@selector(checkScreenSchedules)
+                                                         userInfo:nil
+                                                          repeats:YES];
+}
+
+- (void)stopTimer
+{
+    [_checkScheduleTimer invalidate];
+    _checkScheduleTimer = nil;
+}
+
+- (void)checkScreenSchedules
+{
+    NSLog(@"Checking schedules...");
+    
+    for (FRSHScreen *_screen in _screens) {
+        NSLog(@"Screen: %@ - next download: %@", [_screen getScreenID][@"id"], [[_screen schedule] downloadSchedule][@"next_download_datetime"]);
+        
+        if ([[_screen schedule] timeToDownload]) {
+            [self downloadWallpaperForScreen:_screen];
+        }
+    }
 }
 
 - (void)dealloc
