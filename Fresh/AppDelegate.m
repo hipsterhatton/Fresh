@@ -17,6 +17,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+//    if (![[NSBundle mainBundle] isLoginItem]) {
+//        [[NSBundle mainBundle] addToLoginItems];
+//        NSLog(@"Added Fresh to login items...");
+//    } else {
+//        NSLog(@"Fresh already added to login items...");
+//    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <IYLoginItem/NSBundle+LoginItem.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
