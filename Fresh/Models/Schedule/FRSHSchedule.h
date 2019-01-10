@@ -17,13 +17,10 @@
 @property (nonatomic, retain) NSString *screenID;
 @property (nonatomic, retain) NSMutableDictionary *downloadSchedule;
 
-
-
 - (id)initWithScreenID:(NSString *)screenID;
 - (void)getScheduleSetup;
 - (void)updatePersistedSchedule;
 - (void)calculateNextDownloadDateTime;
-- (void)calculateNextDownloadDateTime:(NSDate *)overrideDate;
 - (BOOL)isScheduleActive;
 - (BOOL)timeToDownload;
 - (void)printTimeToDownload;

@@ -19,6 +19,7 @@
 {
     [super setUp];
     _service = [FRSHFileAndDirService new];
+    [_service.shuttle.mockRequests disableMockShuttleRequests];
 }
 
 - (void)tearDown

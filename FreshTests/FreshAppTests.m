@@ -19,6 +19,7 @@
 {
     [super setUp];
     _app = [FRSHApp new];
+    [_app.wallpaperAPI.shuttle.mockRequests disableMockShuttleRequests];
 }
 
 - (void)tearDown

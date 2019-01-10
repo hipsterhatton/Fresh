@@ -63,24 +63,24 @@ static dispatch_once_t onceToken;
     
     if (_mutableFastData[_keys[_a]]) {
         
-        NSLog(@"1. Fast Data has key: %@", _keys[_a]);
+//        NSLog(@"1. Fast Data has key: %@", _keys[_a]);
         
         _objectClass = [NSString stringWithFormat:@"%@", [_mutableFastData[_keys[_a]] class]];
         
         if (![_objectClassAllowed containsObject:_objectClass]) {
-            NSLog(@"2. Fast Data value for key: %@ IS NOT A DICT", _keys[_a]);
+//            NSLog(@"2. Fast Data value for key: %@ IS NOT A DICT", _keys[_a]);
             [_mutableFastData setValue:[@{} mutableCopy] forKey:_keys[_a]];
         } else {
-            NSLog(@"2. Fast Data value for key: %@ was ok", _keys[_a]);
+//            NSLog(@"2. Fast Data value for key: %@ was ok", _keys[_a]);
         }
         
     } else {
-        NSLog(@"1. Fast Data DOES NOT have key: %@", _keys[_a]);
+//        NSLog(@"1. Fast Data DOES NOT have key: %@", _keys[_a]);
         [_mutableFastData setValue:[@{} mutableCopy] forKey:_keys[_a]];
     }
     
     if (_a == ([_keys count] - 1)) {
-        NSLog(@"Breaking loop...");
+//        NSLog(@"Breaking loop...");
         [_mutableFastData setValue:dataToWrite forKey:_keys[_a]];
         return;
     } else {

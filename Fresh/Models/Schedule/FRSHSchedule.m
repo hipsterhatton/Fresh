@@ -163,12 +163,6 @@
     [self updatePersistedSchedule];
 }
 
-- (void)calculateNextDownloadDateTime:(NSDate *)overrideDate
-{
-    [self nextDateCustomDayOfMonth:overrideDate];
-    [self updatePersistedSchedule];
-}
-
 ////
 // Build next download date: daily (today/tomorrow)
 //

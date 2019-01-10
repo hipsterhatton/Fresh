@@ -19,6 +19,7 @@
 {
     [super setUp];
     _api = [FRSHUnsplashAPI new];
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
 }
 
 - (void)tearDown
@@ -29,6 +30,8 @@
 
 - (void)testGetRandomWallpaperURL
 {
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
     FRSHScreen *_sc = [[FRSHScreen alloc] initWithScreen:[NSScreen mainScreen]];
     XCTAssertNotNil([_api getWallpaperURLForScreen:_sc]);
     
