@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
 
 #import "FRSHScreen.h"
 #import "FRSHSchedule.h"
@@ -23,4 +24,5 @@
 - (NSDictionary *)getScreenDimensions;
 - (BOOL)isScreenMainScreen;
 - (BOOL)isFullscreen;
+- (NSError *)updateScreenWithWallpaper:(NSString *)pathToImage;
 @end
