@@ -29,11 +29,18 @@
 		DC372AC52113192900DC2DFC /* ShuttleMockRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */; };
 		DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC72113193800DC2DFC /* SDMacVersion.m */; };
 		DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC72113193800DC2DFC /* SDMacVersion.m */; };
+		DC4E239A21E6BA9900DBC0E0 /* FastData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E239921E6BA9900DBC0E0 /* FastData.m */; };
+		DC4E239D21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E239C21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m */; };
+		DC4E23A321E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E23A221E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m */; };
+		DC4E23A921E6C00B00DBC0E0 /* FRSHSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E23A821E6C00B00DBC0E0 /* FRSHSchedule.m */; };
+		DC4E23AB21E6C04700DBC0E0 /* ScheduleModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E23AA21E6C04700DBC0E0 /* ScheduleModelTests.m */; };
+		DC4E23AD21E6C08700DBC0E0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4E23AC21E6C08700DBC0E0 /* libsqlite3.0.tbd */; };
 		DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85032113173800B6FE21 /* AppDelegate.m */; };
 		DCDE85072113173800B6FE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85062113173800B6FE21 /* main.m */; };
 		DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDE85082113173800B6FE21 /* Assets.xcassets */; };
 		DCDE850C2113173800B6FE21 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDE850A2113173800B6FE21 /* MainMenu.xib */; };
 		DCDE85172113173800B6FE21 /* FreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85162113173800B6FE21 /* FreshTests.m */; };
+		DCE9F47F21E7568800B91E24 /* FastDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE9F47E21E7568800B91E24 /* FastDataServiceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,16 @@
 		DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShuttleMockRequests.m; path = Libs/Shuttle/ShuttleMockRequests.m; sourceTree = "<group>"; };
 		DC372AC62113193800DC2DFC /* SDMacVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDMacVersion.h; path = Libs/SDVersion/SDMacVersion.h; sourceTree = "<group>"; };
 		DC372AC72113193800DC2DFC /* SDMacVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDMacVersion.m; path = Libs/SDVersion/SDMacVersion.m; sourceTree = "<group>"; };
+		DC4E239821E6BA9900DBC0E0 /* FastData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastData.h; path = "Libs/Fast Data/FastData.h"; sourceTree = "<group>"; };
+		DC4E239921E6BA9900DBC0E0 /* FastData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastData.m; path = "Libs/Fast Data/FastData.m"; sourceTree = "<group>"; };
+		DC4E239B21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GVUserDefaults+FastData.h"; path = "Libs/Fast Data/GVUserDefaults+FastData.h"; sourceTree = "<group>"; };
+		DC4E239C21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GVUserDefaults+FastData.m"; path = "Libs/Fast Data/GVUserDefaults+FastData.m"; sourceTree = "<group>"; };
+		DC4E23A121E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+DeepMutableCopy.h"; path = "Libs/Fast Data/NSDictionary+DeepMutableCopy.h"; sourceTree = "<group>"; };
+		DC4E23A221E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+DeepMutableCopy.m"; path = "Libs/Fast Data/NSDictionary+DeepMutableCopy.m"; sourceTree = "<group>"; };
+		DC4E23A721E6C00B00DBC0E0 /* FRSHSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSHSchedule.h; path = Models/Schedule/FRSHSchedule.h; sourceTree = "<group>"; };
+		DC4E23A821E6C00B00DBC0E0 /* FRSHSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSHSchedule.m; path = Models/Schedule/FRSHSchedule.m; sourceTree = "<group>"; };
+		DC4E23AA21E6C04700DBC0E0 /* ScheduleModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleModelTests.m; sourceTree = "<group>"; };
+		DC4E23AC21E6C08700DBC0E0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		DCDE84FF2113173800B6FE21 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDE85022113173800B6FE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCDE85032113173800B6FE21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +104,7 @@
 		DCDE85122113173800B6FE21 /* FreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDE85162113173800B6FE21 /* FreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshTests.m; sourceTree = "<group>"; };
 		DCDE85182113173800B6FE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCE9F47E21E7568800B91E24 /* FastDataServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastDataServiceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4E23AD21E6C08700DBC0E0 /* libsqlite3.0.tbd in Frameworks */,
 				690461677871404F988A73D1 /* libPods-Fresh.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +131,7 @@
 		6E428BA5C2516C37B341CCF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC4E23AC21E6C08700DBC0E0 /* libsqlite3.0.tbd */,
 				1A491669C3A8779D00B67FDB /* libPods-Fresh.a */,
 				69378BDBD26FF05300C7DF6C /* libPods-FreshTests.a */,
 			);
@@ -140,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2AA50721E60BE300EA8F1F /* Screen */,
+				DC4E23A621E6BFE200DBC0E0 /* Schedule */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -165,6 +186,7 @@
 		DC372AAD2113185E00DC2DFC /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				DC4E239721E6BA6E00DBC0E0 /* Fast Data */,
 				DC372AAE2113189600DC2DFC /* GVUserDefaults */,
 				DC372AAF2113189C00DC2DFC /* Reachability */,
 				DC372AB0211318A300DC2DFC /* SDVersion */,
@@ -209,6 +231,28 @@
 				DC372AC12113192900DC2DFC /* ShuttleMockRequests.m */,
 			);
 			name = Shuttle;
+			sourceTree = "<group>";
+		};
+		DC4E239721E6BA6E00DBC0E0 /* Fast Data */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E239821E6BA9900DBC0E0 /* FastData.h */,
+				DC4E239921E6BA9900DBC0E0 /* FastData.m */,
+				DC4E239B21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.h */,
+				DC4E239C21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m */,
+				DC4E23A121E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.h */,
+				DC4E23A221E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m */,
+			);
+			name = "Fast Data";
+			sourceTree = "<group>";
+		};
+		DC4E23A621E6BFE200DBC0E0 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E23A721E6C00B00DBC0E0 /* FRSHSchedule.h */,
+				DC4E23A821E6C00B00DBC0E0 /* FRSHSchedule.m */,
+			);
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 		DCDE84F62113173800B6FE21 = {
@@ -262,6 +306,8 @@
 		DCDE85152113173800B6FE21 /* FreshTests */ = {
 			isa = PBXGroup;
 			children = (
+				DCE9F47E21E7568800B91E24 /* FastDataServiceTests.m */,
+				DC4E23AA21E6C04700DBC0E0 /* ScheduleModelTests.m */,
 				DC2AA50421E6097300EA8F1F /* FreshAppTests.m */,
 				DC2AA51121E612D700EA8F1F /* FreshUnsplashApiTests.m */,
 				DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */,
@@ -492,13 +538,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4E23A321E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m in Sources */,
 				DC2AA50A21E60C0400EA8F1F /* FRSHScreen.m in Sources */,
 				DC2AA51021E6127700EA8F1F /* FRSHUnsplashAPI.m in Sources */,
 				DC2AA4FA21E5F9E100EA8F1F /* FRSHFileAndDirService.m in Sources */,
+				DC4E23A921E6C00B00DBC0E0 /* FRSHSchedule.m in Sources */,
 				DCDE85072113173800B6FE21 /* main.m in Sources */,
 				DC372AC42113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
+				DC4E239A21E6BA9900DBC0E0 /* FastData.m in Sources */,
 				DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */,
 				DC372ABC2113191500DC2DFC /* Reachability.m in Sources */,
+				DC4E239D21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m in Sources */,
 				DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */,
 				DC372AC22113192900DC2DFC /* Shuttle.m in Sources */,
@@ -513,11 +563,13 @@
 				DCDE85172113173800B6FE21 /* FreshTests.m in Sources */,
 				DC372AC32113192900DC2DFC /* Shuttle.m in Sources */,
 				DC372ABD2113191500DC2DFC /* Reachability.m in Sources */,
+				DC4E23AB21E6C04700DBC0E0 /* ScheduleModelTests.m in Sources */,
 				DC2AA51221E612D700EA8F1F /* FreshUnsplashApiTests.m in Sources */,
 				DC2AA4FC21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m in Sources */,
 				DC372AB5211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC52113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
 				DC2AA50521E6097300EA8F1F /* FreshAppTests.m in Sources */,
+				DCE9F47F21E7568800B91E24 /* FastDataServiceTests.m in Sources */,
 				DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */,
 				DC2AA50C21E60E0900EA8F1F /* FreshScreenTests.m in Sources */,
 			);
