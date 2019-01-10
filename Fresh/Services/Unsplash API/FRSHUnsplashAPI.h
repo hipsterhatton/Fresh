@@ -16,5 +16,5 @@
 
 @property (nonatomic, retain) Shuttle *shuttle;
 
-- (RXPromise *)getWallpaperURL:(FRSHScreen *)screen;
+- (RXPromise *)getWallpaperURLForScreen:(FRSHScreen *)screen;
 @end

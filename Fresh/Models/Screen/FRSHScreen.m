@@ -22,8 +22,14 @@ extern CGSConnection _CGSDefaultConnection(void);
     if (self = [super init]) {
         _screen = screen;
         _schedule = [[FRSHSchedule alloc] initWithScreenID:[self getScreenID][@"id"]];
+        _state = [NSMutableDictionary new];
     }
     return self;
+}
+
+- (NSDictionary *)getScreenState
+{
+    return _state;
 }
 
 ////

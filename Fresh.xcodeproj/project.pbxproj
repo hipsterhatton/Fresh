@@ -306,9 +306,9 @@
 		DCDE85152113173800B6FE21 /* FreshTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC2AA50421E6097300EA8F1F /* FreshAppTests.m */,
 				DCE9F47E21E7568800B91E24 /* FastDataServiceTests.m */,
 				DC4E23AA21E6C04700DBC0E0 /* ScheduleModelTests.m */,
-				DC2AA50421E6097300EA8F1F /* FreshAppTests.m */,
 				DC2AA51121E612D700EA8F1F /* FreshUnsplashApiTests.m */,
 				DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */,
 				DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */,

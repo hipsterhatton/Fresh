@@ -61,17 +61,23 @@
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen
 {
-    return [_wallpaperAPI getWallpaperURL:screen]
+    [[screen state] setObject:@"time to download" forKey:@"status"];
+    
+    return [_wallpaperAPI getWallpaperURLForScreen:screen]
     
     .then(^id (NSString *wallpaperURL) {
-        NSLog(@"Wallpaper URL:  %@", wallpaperURL);
-        NSLog(@"Wallpaper Name: %@", [self getWallpaperFileName:screen]);
-        return [_fileAndDirService downloadImageFromURL:wallpaperURL filename:[self getWallpaperFileName:screen]];
+        [[screen state] setObject:[self getWallpaperFileName:screen] forKey:@"wallpaper_file_name"];
+        return [_fileAndDirService downloadImageFromURL:wallpaperURL filename:[self getWallpaperFileName:screen] forScreen:screen];
+    }, nil)
+    
+    .then(^id (id blank) {
+        [[screen state] setObject:@"done" forKey:@"status"];
+        return @"OK";
     }, nil)
     
     .then(nil, ^id(NSError* error) {
         NSLog(@"Error: %@", [error localizedDescription]);
-        return nil;
+        return error;
     });
 }
 

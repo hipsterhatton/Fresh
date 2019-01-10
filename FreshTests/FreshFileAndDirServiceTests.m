@@ -64,7 +64,7 @@
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
     
-    [_service downloadImageFromURL:@"https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" filename:@"test"]
+    [_service downloadImageFromURL:@"https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" filename:@"test" forScreen:[FRSHScreen new]]
     
     .then(^id (id blank) {
         return blank;
@@ -90,7 +90,7 @@
     [_service.shuttle ifURLContains:@[@"image_url.com"] thenReturn:[NSImage imageNamed:@"sample_image.png"]];
     [_service.shuttle setConnectionType:None];
     
-    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg"]
+    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg" forScreen:[FRSHScreen new]]
     
     .then(^id (NSDictionary *response) {
         return @"OK";
@@ -108,7 +108,7 @@
     [_service.shuttle ifURLContains:@[@"image_url.com"] thenReturn:[NSImage imageNamed:@"sample_image.png"]];
     [_service.shuttle setConnectionType:Unknown];
     
-    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg"]
+    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg" forScreen:[FRSHScreen new]]
     
     .then(^id (NSDictionary *response) {
         return @"OK";
@@ -125,7 +125,7 @@
     [_service.shuttle activateMockRequests];
     [_service.shuttle.mockRequests setRequestTimeout:YES];
     
-    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg"]
+    [_service downloadImageFromURL:@"image_url.com" filename:@"test.jpg" forScreen:[FRSHScreen new]]
     
     .then(^id (NSDictionary *response) {
         return @"OK";

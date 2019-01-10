@@ -10,12 +10,13 @@
 #import <Foundation/Foundation.h>
 #import <RXPromise/RXPromise.h>
 
+#import "FRSHScreen.h"
 #import "Shuttle.h"
 
 @interface FRSHFileAndDirService : NSObject
 
 @property (nonatomic, retain) Shuttle *shuttle;
 
-- (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename;
+- (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename forScreen:(FRSHScreen *)screen;
 
 @end

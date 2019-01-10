@@ -30,11 +30,11 @@
 - (void)testGetRandomWallpaperURL
 {
     FRSHScreen *_sc = [[FRSHScreen alloc] initWithScreen:[NSScreen mainScreen]];
-    XCTAssertNotNil([_api getWallpaperURL:_sc]);
+    XCTAssertNotNil([_api getWallpaperURLForScreen:_sc]);
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
     
-    [_api getWallpaperURL:_sc]
+    [_api getWallpaperURLForScreen:_sc]
     
     .then(^id (NSString *_str) {
         XCTAssertFalse([_str rangeOfString:@"https://images.unsplash.com/photo-"].location == NSNotFound);

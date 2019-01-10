@@ -127,4 +127,32 @@
     [self waitForExpectationsWithTimeout:60 handler:nil];
 }
 
+- (void)testDownloadWallpaperUpdateState
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_app downloadWallpaperForScreen:_app.screens.firstObject]
+    
+    .then(^id (id blank) {
+        NSDictionary *_d = [_app.screens[0] getScreenState];
+        XCTAssertNotNil(_d[@"status"]);
+        XCTAssertNotNil(_d[@"wallpaper_file_name"]);
+        XCTAssertNotNil(_d[@"wallpaper_file_path"]);
+        XCTAssertNotNil(_d[@"wallpaper_url"]);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *response) {
+        
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNil(error);
+    });
+    
+    [self waitForExpectationsWithTimeout:60 handler:nil];
+}
+
 @end

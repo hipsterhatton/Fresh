@@ -95,25 +95,24 @@
     return documentsDirectory;
 }
 
-- (NSError *)writeImageDataToDiskWithFilename:(NSString *)filename fileData:(NSData *)fileData
+- (NSError *)writeImageDataToDiskWithFilename:(NSString *)filepath fileData:(NSData *)fileData
 {
     NSError *_error;
-    
-    NSString *path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, nil];
-    path = [path stringByAppendingPathComponent:filename];
-    
-    [fileData writeToFile:path options:NSDataWritingAtomic error:&_error];
-    
+    [fileData writeToFile:filepath options:NSDataWritingAtomic error:&_error];
     return _error;
 }
 
-- (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename
+- (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename forScreen:(FRSHScreen *)screen
 {
+    [[screen state] setObject:@"about to download image" forKey:@"status"];
+    
     return [self.shuttle launch:GET :Image :imageURL :nil]
     
     .then(^id(NSImage *rawImage) {
-        NSString *_imageName = [NSString stringWithFormat:@"%@.jpg", filename];
-        return [self writeImageDataToDiskWithFilename:_imageName fileData:[rawImage TIFFRepresentation]];
+        NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [NSString stringWithFormat:@"%@.jpg", filename], nil];
+        [[screen state] setObject:_path forKey:@"wallpaper_file_path"];
+        [[screen state] setObject:@"writing image to disk" forKey:@"status"];
+        return [self writeImageDataToDiskWithFilename:_path fileData:[rawImage TIFFRepresentation]];
     }, nil)
     
     .then(^id(id blank) {

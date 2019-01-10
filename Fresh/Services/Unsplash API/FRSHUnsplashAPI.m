@@ -26,12 +26,20 @@
 ////
 // Return URL of a random wallpaper from collection(s)
 //
-- (RXPromise *)getWallpaperURL:(FRSHScreen *)screen
+- (RXPromise *)getWallpaperURLForScreen:(FRSHScreen *)screen
 {
+    [[screen state] setObject:@"about to fetch unsplash url" forKey:@"status"];
+    
     return [self.shuttle launch:GET :JSON :[self constructWallpaperURL:screen] :nil]
     
     .then(^id (NSDictionary *rawJSON) {
+        [[screen state] setObject:@"got custom url" forKey:@"status"];
         return rawJSON[@"urls"][@"custom"];
+    }, nil)
+    
+    .then(^id (NSString *customURL) {
+        [[screen state] setObject:customURL forKey:@"wallpaper_url"];
+        return customURL;
     }, nil)
     
     .then(nil, ^id(NSError *error) {
