@@ -22,6 +22,87 @@
     return self;
 }
 
+- (void)setScheduleDailyAtHour:(int)hour andMinute:(int)minute
+{
+    _downloadSchedule[@"what_time_to_download"] = @[[NSNumber numberWithInt:hour], [NSNumber numberWithInt:minute]];
+    _downloadSchedule[@"how_often_to_download"] = @"Daily";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleWeeklyAtHour:(int)hour andMinute:(int)minute dayOfWeek:(NSString *)dayOfWeek
+{
+    _downloadSchedule[@"what_time_to_download"] = @[[NSNumber numberWithInt:hour], [NSNumber numberWithInt:minute]];
+    _downloadSchedule[@"how_often_to_download"] = @"Weekly";
+    _downloadSchedule[@"day_of_week_to_download_on"] = dayOfWeek;
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleFortnightlyAtHour:(int)hour andMinute:(int)minute dayOfWeek:(NSString *)dayOfWeek
+{
+    _downloadSchedule[@"what_time_to_download"] = @[[NSNumber numberWithInt:hour], [NSNumber numberWithInt:minute]];
+    _downloadSchedule[@"how_often_to_download"] = @"Fortnightly";
+    _downloadSchedule[@"day_of_week_to_download_on"] = dayOfWeek;
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleFDOMAtHour:(int)hour andMinute:(int)minute
+{
+    _downloadSchedule[@"what_time_to_download"] = @[[NSNumber numberWithInt:hour], [NSNumber numberWithInt:minute]];
+    _downloadSchedule[@"how_often_to_download"] = @"FirstDayOfMonth";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleLDOMAtHour:(int)hour andMinute:(int)minute
+{
+    _downloadSchedule[@"what_time_to_download"] = @[[NSNumber numberWithInt:hour], [NSNumber numberWithInt:minute]];
+    _downloadSchedule[@"how_often_to_download"] = @"LastDayOfMonth";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleCDOMAtHour:(int)hour andMinute:(int)minute dayOfMonth:(int)dayOfMonth
+{
+    _downloadSchedule[@"what_time_to_download"] = @[[NSNumber numberWithInt:hour], [NSNumber numberWithInt:minute]];
+    _downloadSchedule[@"custom_dom_to_download_on"] = [NSNumber numberWithInt:dayOfMonth];
+    _downloadSchedule[@"how_often_to_download"] = @"CustomDayOfMonth";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleEveryXMinutes:(int)minutes startingFrom:(NSDate *)startingFromDate
+{
+    _downloadSchedule[@"how_often_to_download"] = @"EveryX";
+    _downloadSchedule[@"download_every_x"][@"starting_from"] =  (startingFromDate == nil ? @(false) : startingFromDate);
+    _downloadSchedule[@"download_every_x"][@"every_x"] =        @(minutes);
+    _downloadSchedule[@"download_every_x"][@"every_amount"] =   @"minutes";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleEveryXHours:(int)hours startingFrom:(NSDate *)startingFromDate
+{
+    _downloadSchedule[@"how_often_to_download"] = @"EveryX";
+    _downloadSchedule[@"download_every_x"][@"starting_from"] =  (startingFromDate == nil ? @(false) : startingFromDate);
+    _downloadSchedule[@"download_every_x"][@"every_x"] =        @(hours);
+    _downloadSchedule[@"download_every_x"][@"every_amount"] =   @"hours";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
+- (void)setScheduleEveryXDays:(int)days startingFrom:(NSDate *)startingFromDate
+{
+    _downloadSchedule[@"how_often_to_download"] = @"EveryX";
+    _downloadSchedule[@"download_every_x"][@"starting_from"] =  (startingFromDate == nil ? @(false) : startingFromDate);
+    _downloadSchedule[@"download_every_x"][@"every_x"] =        @(days);
+    _downloadSchedule[@"download_every_x"][@"every_amount"] =   @"days";
+    [self calculateNextDownloadDateTime];
+    [self updatePersistedSchedule];
+}
+
 ////
 // Get the download schedule for screen w/ ID: `_screenID`
 //
@@ -121,14 +202,6 @@
 //
 - (void)calculateNextDownloadDateTime
 {
-//    // Testing code
-//    if (false) {
-//        [self nextDateWeekly];
-//        [_downloadSchedule setObject:@(true) forKey:@"next_download_datetime_has_been_set"];
-//        [self updatePersistedSchedule];
-//        return;
-//    }
-    
     if ([_downloadSchedule[@"how_often_to_download"] isEqualToString:@"Daily"]) {
         
         [self nextDateDaily];
@@ -162,6 +235,13 @@
     [_downloadSchedule setObject:@(true) forKey:@"next_download_datetime_has_been_set"];
     [self updatePersistedSchedule];
 }
+
+- (void)calculateNextDownloadDateTime:(NSDate *)overrideDate
+{
+    [self nextDateCustomDayOfMonth:overrideDate];
+    [self updatePersistedSchedule];
+}
+
 
 ////
 // Build next download date: daily (today/tomorrow)
@@ -215,7 +295,7 @@
 //
 - (void)nextDateFortnightly
 {
-    NSLog(@"===> Building next download date: Weekly");
+    NSLog(@"===> Building next download date: Fortnightly");
     
     NSDate *_date = [self buildDateTodayWithTime];
     
@@ -344,7 +424,8 @@
     NSLog(@"===> Building next download date: Every X Days");
     
     NSDate *_date;
-    if ([_downloadSchedule[@"download_every_x"][@"starting_from"] boolValue] == false) {
+    
+    if ([_downloadSchedule[@"download_every_x"][@"starting_from"] class] == [@(1) class]) {
         _date = [NSDate date];
     } else {
         _date = _downloadSchedule[@"download_every_x"][@"starting_from"];

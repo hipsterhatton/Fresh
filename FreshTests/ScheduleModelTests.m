@@ -29,6 +29,117 @@
     [super tearDown];
 }
 
+- (void)testUpdateScheduleDaily
+{
+    [_schedule setScheduleDailyAtHour:8 andMinute:30];
+    
+    NSDate *nextDate = [[NSDate date] dateByAddingDays:1];
+    nextDate = [NSDate dateWithYear:nextDate.year month:nextDate.month day:nextDate.day hour:8 minute:30 second:0];
+    XCTAssertEqualObjects(nextDate, _schedule.downloadSchedule[@"next_download_datetime"]);
+}
+
+- (void)testUpdateScheduleWeekly
+{
+    [_schedule setScheduleWeeklyAtHour:9 andMinute:30 dayOfWeek:@"Thursday"];
+    
+    NSDate *nextDate = [NSDate date];
+    
+    // 0 Sunday, 1 Monday, 2 Tuesday, 3 Wednesday, 4 Thursday, 5 Friday, 6 Saturday
+    int thursday = 5;
+    
+    while ([nextDate weekday] != thursday) {
+        nextDate = [nextDate dateByAddingDays:1];
+    }
+    
+    nextDate = [NSDate dateWithYear:nextDate.year month:nextDate.month day:nextDate.day hour:9 minute:30 second:0];
+    
+    if ([nextDate isLessThan:[NSDate date]]) {
+        nextDate = [nextDate dateByAddingWeeks:1];
+    }
+    
+    XCTAssertEqualObjects(nextDate, _schedule.downloadSchedule[@"next_download_datetime"]);
+}
+
+- (void)testUpdateScheduleFortnightly
+{
+    [_schedule setScheduleWeeklyAtHour:9 andMinute:30 dayOfWeek:@"Thursday"];
+    
+    NSDate *nextDate = [NSDate date];
+    
+    // 0 Sunday, 1 Monday, 2 Tuesday, 3 Wednesday, 4 Thursday, 5 Friday, 6 Saturday
+    int thursday = 5;
+    
+    while ([nextDate weekday] != thursday) {
+        nextDate = [nextDate dateByAddingDays:1];
+    }
+    
+    nextDate = [NSDate dateWithYear:nextDate.year month:nextDate.month day:nextDate.day hour:9 minute:30 second:0];
+    
+    if ([nextDate isLessThan:[NSDate date]]) {
+        nextDate = [nextDate dateByAddingWeeks:2];
+    }
+    
+    XCTAssertEqualObjects(nextDate, _schedule.downloadSchedule[@"next_download_datetime"]);
+}
+
+- (void)testUpdateScheduleFDOM
+{
+    [_schedule setScheduleFDOMAtHour:9 andMinute:30];
+    
+    NSDate *nextDate = [[NSDate date] dateByAddingMonths:1];
+    nextDate = [NSDate dateWithYear:nextDate.year month:nextDate.month day:1 hour:9 minute:30 second:0];
+    
+    XCTAssertEqualObjects(nextDate, _schedule.downloadSchedule[@"next_download_datetime"]);
+}
+
+- (void)testUpdateScheduleLDOM
+{
+    [_schedule setScheduleLDOMAtHour:9 andMinute:30];
+    
+    NSDate *nextDate = [[NSDate date] dateByAddingMonths:2];
+    nextDate = [NSDate dateWithYear:nextDate.year month:nextDate.month day:0 hour:9 minute:30 second:0];
+    
+    XCTAssertEqualObjects(nextDate, _schedule.downloadSchedule[@"next_download_datetime"]);
+}
+
+- (void)testUpdateScheduleCDOM
+{
+    [_schedule setScheduleCDOMAtHour:11 andMinute:30 dayOfMonth:21];
+    
+    NSDate *nextDate = [NSDate date];
+    nextDate = [NSDate dateWithYear:nextDate.year month:nextDate.month day:21 hour:11 minute:30 second:0];
+    
+    XCTAssertEqualObjects(nextDate, _schedule.downloadSchedule[@"next_download_datetime"]);
+}
+
+- (void)testUpdateScheduleEveryXMinutesNoStartingFrom
+{
+    [_schedule setScheduleEveryXMinutes:10 startingFrom:nil];
+    
+    NSDate *nextDate = [NSDate date];
+    nextDate = [nextDate dateByAddingMinutes:10];
+    
+    XCTAssertEqualWithAccuracy([nextDate timeIntervalSinceReferenceDate], [_schedule.downloadSchedule[@"next_download_datetime"] timeIntervalSinceReferenceDate], 1, @"");
+}
+
+- (void)testUpdateScheduleEveryXHoursNoStartingFrom
+{
+    [_schedule setScheduleEveryXHours:1 startingFrom:nil];
+    
+    NSDate *nextDate = [NSDate date];
+    nextDate = [nextDate dateByAddingHours:1];
+    XCTAssertEqualWithAccuracy([nextDate timeIntervalSinceReferenceDate], [_schedule.downloadSchedule[@"next_download_datetime"] timeIntervalSinceReferenceDate], 1, @"");
+}
+
+- (void)testUpdateScheduleEveryXDaysNoStartingFrom
+{
+    [_schedule setScheduleEveryXDays:10 startingFrom:nil];
+    
+    NSDate *nextDate = [NSDate date];
+    nextDate = [nextDate dateByAddingDays:10];
+    XCTAssertEqualWithAccuracy([nextDate timeIntervalSinceReferenceDate], [_schedule.downloadSchedule[@"next_download_datetime"] timeIntervalSinceReferenceDate], 1, @"");
+}
+
 - (void)testInitWithScreenID
 {
     XCTAssertNotNil(_schedule);

@@ -21,8 +21,19 @@
 - (void)getScheduleSetup;
 - (void)updatePersistedSchedule;
 - (void)calculateNextDownloadDateTime;
+- (void)calculateNextDownloadDateTime:(NSDate *)overrideDate;
 - (BOOL)isScheduleActive;
 - (BOOL)timeToDownload;
 - (void)printTimeToDownload;
+
+- (void)setScheduleDailyAtHour:(int)hour andMinute:(int)minute;
+- (void)setScheduleWeeklyAtHour:(int)hour andMinute:(int)minute dayOfWeek:(NSString *)dayOfWeek;
+- (void)setScheduleFortnightlyAtHour:(int)hour andMinute:(int)minute dayOfWeek:(NSString *)dayOfWeek;
+- (void)setScheduleFDOMAtHour:(int)hour andMinute:(int)minute;
+- (void)setScheduleLDOMAtHour:(int)hour andMinute:(int)minute;
+- (void)setScheduleCDOMAtHour:(int)hour andMinute:(int)minute dayOfMonth:(int)dayOfMonth;
+- (void)setScheduleEveryXMinutes:(int)minutes startingFrom:(NSDate *)startingFromDate;
+- (void)setScheduleEveryXHours:(int)minutes startingFrom:(NSDate *)startingFromDate;
+- (void)setScheduleEveryXDays:(int)minutes startingFrom:(NSDate *)startingFromDate;
 
 @end
