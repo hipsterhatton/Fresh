@@ -19,7 +19,6 @@
 {
     [super setUp];
     _api = [FRSHUnsplashAPI new];
-    [_api.shuttle.mockRequests disableMockShuttleRequests];
 }
 
 - (void)tearDown

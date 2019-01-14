@@ -60,6 +60,7 @@
 {
     _fileAndDirService = [FRSHFileAndDirService new];
     _wallpaperAPI = [FRSHUnsplashAPI new];
+    _database = [FRSHDatabase new];
 }
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen
@@ -75,6 +76,11 @@
     
     .then(^id (id blank) {
         [[screen state] setObject:@"done" forKey:@"status"];
+        return @"OK";
+    }, nil)
+    
+    .then(^id (id blank) {
+        [_database writeToDatabase:[screen state]];
         return @"OK";
     }, nil)
     

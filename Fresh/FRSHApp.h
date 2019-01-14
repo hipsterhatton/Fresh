@@ -11,6 +11,7 @@
 
 #import "FRSHScreen.h"
 
+#import "FRSHDatabase.h"
 #import "FRSHFileAndDirService.h"
 #import "FRSHUnsplashAPI.h"
 
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) FRSHFileAndDirService *fileAndDirService;
 @property (nonatomic, retain) FRSHUnsplashAPI *wallpaperAPI;
 @property (nonatomic, retain) NSTimer *checkScheduleTimer;
+@property (nonatomic, retain) FRSHDatabase *database;
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen;
 

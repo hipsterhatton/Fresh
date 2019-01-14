@@ -11,8 +11,6 @@
 		690461677871404F988A73D1 /* libPods-Fresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A491669C3A8779D00B67FDB /* libPods-Fresh.a */; };
 		DC2AA4FA21E5F9E100EA8F1F /* FRSHFileAndDirService.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA4F921E5F9E100EA8F1F /* FRSHFileAndDirService.m */; };
 		DC2AA4FC21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */; };
-		DC2AA4FE21E5FEAC00EA8F1F /* Fresh.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC2AA4FD21E5FEAC00EA8F1F /* Fresh.sqlite */; };
-		DC2AA50021E606BC00EA8F1F /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2AA4FF21E606BC00EA8F1F /* sample_image.png */; };
 		DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50221E6092500EA8F1F /* FRSHApp.m */; };
 		DC2AA50521E6097300EA8F1F /* FreshAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50421E6097300EA8F1F /* FreshAppTests.m */; };
 		DC2AA50A21E60C0400EA8F1F /* FRSHScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2AA50921E60C0400EA8F1F /* FRSHScreen.m */; };
@@ -35,6 +33,12 @@
 		DC4E23A921E6C00B00DBC0E0 /* FRSHSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E23A821E6C00B00DBC0E0 /* FRSHSchedule.m */; };
 		DC4E23AB21E6C04700DBC0E0 /* ScheduleModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E23AA21E6C04700DBC0E0 /* ScheduleModelTests.m */; };
 		DC4E23AD21E6C08700DBC0E0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4E23AC21E6C08700DBC0E0 /* libsqlite3.0.tbd */; };
+		DC4FCEAE21ECE662000A0A20 /* FRSHDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4FCEAD21ECE662000A0A20 /* FRSHDatabase.m */; };
+		DC4FCEB021ECE776000A0A20 /* FreshDatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */; };
+		DC4FCEB221ECEB0E000A0A20 /* Fresh.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */; };
+		DC4FCEB321ECEB0E000A0A20 /* Fresh.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */; };
+		DC4FCEB521ECEBA9000A0A20 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB421ECEBA9000A0A20 /* sample_image.png */; };
+		DC4FCEB621ECEBA9000A0A20 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB421ECEBA9000A0A20 /* sample_image.png */; };
 		DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85032113173800B6FE21 /* AppDelegate.m */; };
 		DCDE85072113173800B6FE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85062113173800B6FE21 /* main.m */; };
 		DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDE85082113173800B6FE21 /* Assets.xcassets */; };
@@ -63,8 +67,6 @@
 		DC2AA4F821E5F9E100EA8F1F /* FRSHFileAndDirService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSHFileAndDirService.h; path = "Services/File and Dir/FRSHFileAndDirService.h"; sourceTree = "<group>"; };
 		DC2AA4F921E5F9E100EA8F1F /* FRSHFileAndDirService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSHFileAndDirService.m; path = "Services/File and Dir/FRSHFileAndDirService.m"; sourceTree = "<group>"; };
 		DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshFileAndDirServiceTests.m; sourceTree = "<group>"; };
-		DC2AA4FD21E5FEAC00EA8F1F /* Fresh.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fresh.sqlite; sourceTree = "<group>"; };
-		DC2AA4FF21E606BC00EA8F1F /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_image.png; sourceTree = "<group>"; };
 		DC2AA50121E6092500EA8F1F /* FRSHApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSHApp.h; sourceTree = "<group>"; };
 		DC2AA50221E6092500EA8F1F /* FRSHApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSHApp.m; sourceTree = "<group>"; };
 		DC2AA50421E6097300EA8F1F /* FreshAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshAppTests.m; sourceTree = "<group>"; };
@@ -94,6 +96,11 @@
 		DC4E23A821E6C00B00DBC0E0 /* FRSHSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSHSchedule.m; path = Models/Schedule/FRSHSchedule.m; sourceTree = "<group>"; };
 		DC4E23AA21E6C04700DBC0E0 /* ScheduleModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleModelTests.m; sourceTree = "<group>"; };
 		DC4E23AC21E6C08700DBC0E0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		DC4FCEAC21ECE662000A0A20 /* FRSHDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSHDatabase.h; path = Services/Database/FRSHDatabase.h; sourceTree = "<group>"; };
+		DC4FCEAD21ECE662000A0A20 /* FRSHDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSHDatabase.m; path = Services/Database/FRSHDatabase.m; sourceTree = "<group>"; };
+		DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshDatabaseTests.m; sourceTree = "<group>"; };
+		DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fresh.sqlite; path = "Supporting Files/Fresh.sqlite"; sourceTree = "<group>"; };
+		DC4FCEB421ECEBA9000A0A20 /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_image.png; path = "Supporting Files/sample_image.png"; sourceTree = "<group>"; };
 		DCDE84FF2113173800B6FE21 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDE85022113173800B6FE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCDE85032113173800B6FE21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +148,7 @@
 		DC2AA4F621E5F9BA00EA8F1F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DC4FCEAB21ECE632000A0A20 /* Database */,
 				DC2AA50D21E6124A00EA8F1F /* Unsplash API */,
 				DC2AA4F721E5F9C100EA8F1F /* File and Dir */,
 			);
@@ -255,6 +263,15 @@
 			name = Schedule;
 			sourceTree = "<group>";
 		};
+		DC4FCEAB21ECE632000A0A20 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				DC4FCEAC21ECE662000A0A20 /* FRSHDatabase.h */,
+				DC4FCEAD21ECE662000A0A20 /* FRSHDatabase.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		DCDE84F62113173800B6FE21 = {
 			isa = PBXGroup;
 			children = (
@@ -296,8 +313,8 @@
 		DCDE85052113173800B6FE21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DC2AA4FF21E606BC00EA8F1F /* sample_image.png */,
-				DC2AA4FD21E5FEAC00EA8F1F /* Fresh.sqlite */,
+				DC4FCEB421ECEBA9000A0A20 /* sample_image.png */,
+				DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */,
 				DCDE85062113173800B6FE21 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -314,6 +331,7 @@
 				DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */,
 				DCDE85162113173800B6FE21 /* FreshTests.m */,
 				DCDE85182113173800B6FE21 /* Info.plist */,
+				DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */,
 			);
 			path = FreshTests;
 			sourceTree = "<group>";
@@ -417,8 +435,8 @@
 			files = (
 				DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */,
 				DCDE850C2113173800B6FE21 /* MainMenu.xib in Resources */,
-				DC2AA4FE21E5FEAC00EA8F1F /* Fresh.sqlite in Resources */,
-				DC2AA50021E606BC00EA8F1F /* sample_image.png in Resources */,
+				DC4FCEB221ECEB0E000A0A20 /* Fresh.sqlite in Resources */,
+				DC4FCEB521ECEBA9000A0A20 /* sample_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +444,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4FCEB321ECEB0E000A0A20 /* Fresh.sqlite in Resources */,
+				DC4FCEB621ECEBA9000A0A20 /* sample_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4E23A321E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m in Sources */,
+				DC4FCEAE21ECE662000A0A20 /* FRSHDatabase.m in Sources */,
 				DC2AA50A21E60C0400EA8F1F /* FRSHScreen.m in Sources */,
 				DC2AA51021E6127700EA8F1F /* FRSHUnsplashAPI.m in Sources */,
 				DC2AA4FA21E5F9E100EA8F1F /* FRSHFileAndDirService.m in Sources */,
@@ -572,6 +593,7 @@
 				DCE9F47F21E7568800B91E24 /* FastDataServiceTests.m in Sources */,
 				DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */,
 				DC2AA50C21E60E0900EA8F1F /* FreshScreenTests.m in Sources */,
+				DC4FCEB021ECE776000A0A20 /* FreshDatabaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
