@@ -52,4 +52,24 @@
     [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
+- (void)testSearchCollections
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api searchCollections:@"coffee" pageNumber:5]
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
 @end

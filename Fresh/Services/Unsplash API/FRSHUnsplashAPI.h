@@ -17,4 +17,5 @@
 @property (nonatomic, retain) Shuttle *shuttle;
 
 - (RXPromise *)getWallpaperURLForScreen:(FRSHScreen *)screen;
+- (RXPromise *)searchCollections:(NSString *)searchTerm pageNumber:(int)pageNumber;
 @end
