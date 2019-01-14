@@ -69,9 +69,10 @@
     
     return [_wallpaperAPI getWallpaperURLForScreen:screen]
     
-    .then(^id (NSString *wallpaperURL) {
+    .then(^id (NSDictionary *data) {
+        [[screen state] setObject:data[@"id"] forKey:@"wallpaper_id"];
         [[screen state] setObject:[self getWallpaperFileName:screen] forKey:@"wallpaper_file_name"];
-        return [_fileAndDirService downloadImageFromURL:wallpaperURL filename:[self getWallpaperFileName:screen] forScreen:screen];
+        return [_fileAndDirService downloadImageFromURL:data[@"url"] filename:[self getWallpaperFileName:screen] forScreen:screen];
     }, nil)
     
     .then(^id (id blank) {

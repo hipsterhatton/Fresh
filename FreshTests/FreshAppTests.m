@@ -136,6 +136,7 @@
     
     .then(^id (id blank) {
         NSDictionary *_d = [_app.screens[0] getScreenState];
+        XCTAssertNotNil(_d[@"wallpaper_id"]);
         XCTAssertNotNil(_d[@"status"]);
         XCTAssertNotNil(_d[@"wallpaper_file_name"]);
         XCTAssertNotNil(_d[@"wallpaper_file_path"]);

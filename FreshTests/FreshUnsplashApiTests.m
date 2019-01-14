@@ -38,8 +38,8 @@
     
     [_api getWallpaperURLForScreen:_sc]
     
-    .then(^id (NSString *_str) {
-        XCTAssertFalse([_str rangeOfString:@"https://images.unsplash.com/photo-"].location == NSNotFound);
+    .then(^id (NSDictionary *_data) {
+        XCTAssertFalse([_data[@"url"] rangeOfString:@"https://images.unsplash.com/photo-"].location == NSNotFound);
         [expectation fulfill];
         return @"OK";
     }, nil)

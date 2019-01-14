@@ -34,12 +34,12 @@
     
     .then(^id (NSDictionary *rawJSON) {
         [[screen state] setObject:@"got custom url" forKey:@"status"];
-        return rawJSON[@"urls"][@"custom"];
+        return @{@"id" : rawJSON[@"id"], @"url" : rawJSON[@"urls"][@"custom"]};
     }, nil)
     
-    .then(^id (NSString *customURL) {
-        [[screen state] setObject:customURL forKey:@"wallpaper_url"];
-        return customURL;
+    .then(^id (NSDictionary *data) {
+        [[screen state] setObject:data[@"url"] forKey:@"wallpaper_url"];
+        return data;
     }, nil)
     
     .then(nil, ^id(NSError *error) {
