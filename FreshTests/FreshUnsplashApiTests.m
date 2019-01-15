@@ -52,4 +52,89 @@
     [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
+- (void)testSearchCollections
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api searchCollections:@"coffee" pageNumber:1]
+    
+    .then(^id (NSDictionary *_data) {
+        XCTAssertNotNil(_data[@"collections"]);
+        XCTAssertGreaterThan([_data[@"collections"] count], 1);
+        XCTAssertNotNil(_data[@"number_of_results"]);
+        XCTAssertGreaterThan([_data[@"number_of_results"] intValue], 1);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNil(error);
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
+- (void)testSearchCollectionsWithBadSearchTerm
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api searchCollections:@"sdjhfshjlfd" pageNumber:1]
+    
+    .then(^id (NSDictionary *_data) {
+        XCTAssertNotNil(_data[@"collections"]);
+        XCTAssertEqual([_data[@"collections"] count], 0);
+        XCTAssertNotNil(_data[@"number_of_results"]);
+        int _x = [_data[@"number_of_results"] intValue];
+        XCTAssertEqual(_x, 0);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNil(error);
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
+- (void)testGetRelevantCollections
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api getRelatedCollectionIDsForCollectionID:@"764827"]
+    
+    .then(^id (NSArray *_d) {
+        XCTAssertNotNil(_d);
+        XCTAssertGreaterThan([_d count], 1);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+}
+
 @end

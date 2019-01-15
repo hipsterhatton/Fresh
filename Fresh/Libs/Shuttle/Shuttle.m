@@ -10,7 +10,8 @@
 
 #import "Shuttle.h"
 
-#define NUMBER_OF_BACK_TO_BACK_REQUESTS 3
+#define NUMBER_OF_BACK_TO_BACK_REQUESTS 5
+#define REQUEST_FAIL_BACK_OFF_AND_RETRY [NSArray arrayWithObjects:@(3), @(6), @(12), @(24), @(60), nil]
 
 @implementation Shuttle
 
@@ -108,7 +109,8 @@
             return error;
         } else {
             _numberOfBackToBackRequests++;
-            NSLog(@"Networking Failed: %d", _numberOfBackToBackRequests);
+            NSLog(@"Networking Failed: %d times - sleeping %d retry", _numberOfBackToBackRequests, [REQUEST_FAIL_BACK_OFF_AND_RETRY[_numberOfBackToBackRequests] intValue]);
+            [NSThread sleepForTimeInterval:[REQUEST_FAIL_BACK_OFF_AND_RETRY[_numberOfBackToBackRequests] intValue]];
             return [self launch:mode :response :url :params];
         }
     });

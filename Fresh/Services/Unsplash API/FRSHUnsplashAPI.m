@@ -9,6 +9,7 @@
 #import "FRSHUnsplashAPI.h"
 
 #define UNSPLASH_API_KEY     @"a337f950a2a232bc8c8a6f3bac2a0697dc731eb66b2745bebd0ad67dad54f9ec"
+#define UNSPLASH_RELATED_THRESHOLD  200
 #define i_to_s(i)   [NSString stringWithFormat:@"%d", i]
 
 @implementation FRSHUnsplashAPI
@@ -81,6 +82,105 @@
     }
     
     return string;
+}
+
+////
+// Search for collections via keyword
+//
+- (RXPromise *)searchCollections:(NSString *)searchTerm pageNumber:(int)pageNumber
+{
+    NSString *url = @"https://api.unsplash.com/search/collections?page=#{PageNumber}&client_id=#{ClientID}&query=#{Term}";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{PageNumber}", @"#{Term}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, i_to_s(pageNumber), searchTerm ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    __block NSMutableDictionary *_results = [NSMutableDictionary new];
+    
+    return [self.shuttle launch:GET :JSON :url :nil]
+    
+    .then(^id (NSDictionary *rawJSON) {
+        _results[@"number_of_results"] = @([rawJSON[@"total"] intValue]);
+        return rawJSON;
+    }, nil)
+    
+    .then(^id (NSDictionary *rawJSON) {
+        _results[@"collections"] = [NSMutableArray new];
+        
+        for (int _a = 0; _a < [rawJSON[@"results"] count]; _a++) {
+            NSDictionary *_d = rawJSON[@"results"][_a];
+            
+            NSMutableArray *_previewPhotos = [NSMutableArray new];
+            for (int _b = 0; _b < [_d[@"preview_photos"] count]; _b++) {
+                
+                [_previewPhotos addObject:rawJSON[@"results"][_a][@"preview_photos"][_b][@"urls"][@"thumb"]];
+            }
+            
+            [_results[@"collections"] addObject:@{
+                                                  @"id" :   rawJSON[@"results"][_a][@"id"],
+                                                  @"sample_images" : _previewPhotos,
+                                                  @"fetch_related" : @(([rawJSON[@"results"][_a][@"total_photos"] intValue] < UNSPLASH_RELATED_THRESHOLD ? YES : NO))
+                                                  }];
+        }
+        return _results;
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+}
+
+- (RXPromise *)getPhotosFromCollection:(NSString *)collectionID
+{
+    NSString *url = @"https://api.unsplash.com/collections/#{CollectionID}/photos?#{ClientID}&per_page=5";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{CollectionID}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, collectionID ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    __block NSMutableArray *_results = [NSMutableArray new];
+    
+    return [self.shuttle launch:GET :JSON :url :nil]
+    
+    .then(^id (NSArray *rawJSON) {
+        for (int _a = 0; _a < [rawJSON count]; _a++) {
+            [_results addObject:rawJSON[_a][@"urls"][@"thumb"]];
+        }
+        
+        return _results;
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+        return error;
+    });
+}
+
+- (RXPromise *)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID
+{
+    NSString *url = @"https://api.unsplash.com/collections/#{CollectionID}/related?client_id=#{ClientID}";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{CollectionID}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, collectionID ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    __block NSMutableArray *_results = [NSMutableArray new];
+    
+    return [self.shuttle launch:GET :JSON :url :nil]
+    
+    .then(^id (NSArray *rawJSON) {
+        for (int _a = 0; _a < [rawJSON count]; _a++) {
+            [_results addObject:rawJSON[_a][@"id"]];
+        }
+        return _results;
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
 }
 
 @end
