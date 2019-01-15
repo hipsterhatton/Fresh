@@ -329,9 +329,9 @@
 				DC2AA51121E612D700EA8F1F /* FreshUnsplashApiTests.m */,
 				DC2AA4FB21E5FBA300EA8F1F /* FreshFileAndDirServiceTests.m */,
 				DC2AA50B21E60E0900EA8F1F /* FreshScreenTests.m */,
+				DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */,
 				DCDE85162113173800B6FE21 /* FreshTests.m */,
 				DCDE85182113173800B6FE21 /* Info.plist */,
-				DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */,
 			);
 			path = FreshTests;
 			sourceTree = "<group>";

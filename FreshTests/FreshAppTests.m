@@ -55,6 +55,8 @@
 
 - (void)testOneDownloadWallpaper
 {
+    [_app.database purgeDatabase];
+    
     XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
     
     [_app downloadWallpaperForScreen:_app.screens.firstObject]
@@ -63,6 +65,13 @@
         NSArray *listOfFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Users/Stephen/Library/Application Support/Fresh/Downloads/" error:nil];
         XCTAssertEqual(listOfFiles.count, 1);
         XCTAssertFalse([listOfFiles[0] rangeOfString:[_app.screens.firstObject getScreenID][@"uuid"]].location == NSNotFound);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (id blank) {
+        NSArray *_db_res = [_app.database readFromDatabase];
+        XCTAssertNotNil(_db_res);
+        XCTAssertEqual([_db_res count], 1);
         return @"OK";
     }, nil)
     
