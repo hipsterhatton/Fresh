@@ -11,7 +11,7 @@
 #import "Shuttle.h"
 
 #define NUMBER_OF_BACK_TO_BACK_REQUESTS 5
-#define REQUEST_FAIL_BACK_OFF_AND_RETRY [NSArray arrayWithObjects:@(5), @(10), @(20), @(40), @(80), nil]
+#define REQUEST_FAIL_BACK_OFF_AND_RETRY [NSArray arrayWithObjects:@(3), @(6), @(12), @(24), @(60), nil]
 
 @implementation Shuttle
 
