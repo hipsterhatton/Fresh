@@ -101,7 +101,7 @@
     return [self.shuttle launch:GET :JSON :url :nil]
     
     .then(^id (NSDictionary *rawJSON) {
-        _results[@"number_of_results"] = [NSNumber numberWithInteger:(int)rawJSON[@"total"]];
+        _results[@"number_of_results"] = @([rawJSON[@"total"] intValue]);
         return rawJSON;
     }, nil)
     
