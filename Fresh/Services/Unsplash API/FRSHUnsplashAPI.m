@@ -44,7 +44,6 @@
     }, nil)
     
     .then(nil, ^id(NSError *error) {
-        NSLog(@"Error: %@", [error localizedDescription]);
         return error;
     });
 }
@@ -146,7 +145,6 @@
     }, nil)
     
     .then(nil, ^id(NSError *error) {
-        NSLog(@"Error: %@", [error localizedDescription]);
         return error;
     });
 }

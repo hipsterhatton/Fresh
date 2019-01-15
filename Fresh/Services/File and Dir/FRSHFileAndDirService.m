@@ -117,7 +117,11 @@
     
     .then(^id(id blank) {
         return [self deleteOldDownloadedWallpapers:filename];
-    }, nil);
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
 }
 
 - (NSError *)deleteOldDownloadedWallpapers:(NSString *)wallpaperFileName

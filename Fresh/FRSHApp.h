@@ -17,11 +17,11 @@
 
 @interface FRSHApp : NSObject
 
+@property (nonatomic, retain) NSTimer *checkScheduleTimer;
 @property (nonatomic, retain) NSMutableArray *screens;
+@property (nonatomic, retain) FRSHDatabase *database;
 @property (nonatomic, retain) FRSHFileAndDirService *fileAndDirService;
 @property (nonatomic, retain) FRSHUnsplashAPI *wallpaperAPI;
-@property (nonatomic, retain) NSTimer *checkScheduleTimer;
-@property (nonatomic, retain) FRSHDatabase *database;
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen;
 

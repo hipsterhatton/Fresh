@@ -26,8 +26,8 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
-
-- (void)testExample
+/*
+- (void)testShuttleExpoBackoff
 {
     _shuttle = [[Shuttle alloc] initWithDefaults:@{
                                                    @"Accept-Version" : @"v1"
@@ -52,5 +52,5 @@
     
     [self waitForExpectationsWithTimeout:180 handler:nil];
 }
-
+*/
 @end
