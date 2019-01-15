@@ -53,7 +53,7 @@
 {
     int _width = [[screen getScreenDimensions][@"width"] intValue];
     int _height = [[screen getScreenDimensions][@"height"] intValue];
-    NSString *_collections = [[self getDefaultCollection] componentsJoinedByString:@","];
+    NSString *_collections = [[screen getScreenCollections] componentsJoinedByString:@","];
     
     NSString *url = @"https://api.unsplash.com/photos/random?client_id=#{ClientID}&orientation=landscape&collections=#{Collections}&w=#{Width}&h=#{Height}";
     
@@ -61,13 +61,6 @@
     NSArray *values =       @[ UNSPLASH_API_KEY, _collections, i_to_s(_width), i_to_s(_height) ];
     
     return [self _replace:url :placeholders :values];
-}
-
-- (NSArray *)getDefaultCollection
-{
-    return @[
-             @"220388"
-             ];
 }
 
 - (NSString *)_replace:(NSString *)string :(NSArray *)placeholders :(NSArray *)values

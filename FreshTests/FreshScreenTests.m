@@ -38,6 +38,16 @@
     XCTAssertNotNil([_screen schedule]);
 }
 
+- (void)testInitWithDefaultCollection
+{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    _screen = nil;
+    _screen = [[FRSHScreen alloc] initWithScreen:[NSScreen mainScreen]];
+    XCTAssertNotNil([_screen getScreenCollections]);
+    XCTAssertEqualObjects([_screen getScreenCollections][0], @"220388");
+}
+
 - (void)testGetScreenID
 {
     XCTAssertNotNil([_screen getScreenID]);
@@ -61,6 +71,20 @@
     XCTAssertNotNil([_screen getScreenDimensions]);
     XCTAssertNotNil([_screen getScreenDimensions][@"width"]);
     XCTAssertNotNil([_screen getScreenDimensions][@"height"]);
+}
+
+- (void)testGetSetScreenCollections
+{
+    NSArray *_a;
+    _a = @[@"ABC", @"DEF", @"XYZ"];
+    [_screen setScreenCollection:_a];
+    XCTAssertNotNil([_screen getScreenCollections]);
+    XCTAssertEqualObjects([_screen getScreenCollections], _a);
+    
+    _a = @[@"111", @"222", @"333"];
+    [_screen setScreenCollection:_a];
+    XCTAssertNotNil([_screen getScreenCollections]);
+    XCTAssertEqualObjects([_screen getScreenCollections], _a);
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "FRSHScreen.h"
 
+#define UNSPLASH_DEFAULT_COLELCTION     @"220388"
+
 @implementation FRSHScreen
 
 typedef uint64_t CGSManagedDisplay;
@@ -23,6 +25,7 @@ extern CGSConnection _CGSDefaultConnection(void);
         _screen = screen;
         _schedule = [[FRSHSchedule alloc] initWithScreenID:[self getScreenID][@"id"]];
         _state = [[NSMutableDictionary alloc] initWithDictionary:@{@"screen_id" : [self getScreenID][@"uuid"]}];
+        _storedData = [FastData sharedInstance];
     }
     return self;
 }
@@ -30,6 +33,20 @@ extern CGSConnection _CGSDefaultConnection(void);
 - (NSDictionary *)getScreenState
 {
     return _state;
+}
+
+- (NSArray *)getScreenCollections
+{
+    if (!(NSArray *)[_storedData readData:@"screens", [self getScreenID][@"uuid"], @"collections", nil]) {
+        [_storedData writeData:@[UNSPLASH_DEFAULT_COLELCTION] key:@"screens", [self getScreenID][@"uuid"], @"collections", nil];
+    }
+    
+    return (NSArray *)[_storedData readData:@"screens", [self getScreenID][@"uuid"], @"collections", nil];
+}
+
+- (void)setScreenCollection:(NSArray *)collections
+{
+    [_storedData writeData:collections key:@"screens", [self getScreenID][@"uuid"], @"collections", nil];
 }
 
 ////

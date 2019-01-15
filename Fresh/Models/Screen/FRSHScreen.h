@@ -16,11 +16,14 @@
 
 @interface FRSHScreen : NSObject
 
+@property (nonatomic, retain) FastData *storedData;
 @property (nonatomic, retain) NSScreen *screen;
 @property (nonatomic, retain) FRSHSchedule *schedule;
 @property (nonatomic, retain) NSMutableDictionary *state;
 
 - (id)initWithScreen:(NSScreen *)screen;
+- (NSArray *)getScreenCollections;
+- (void)setScreenCollection:(NSArray *)collections;
 - (NSDictionary *)getScreenState;
 - (NSDictionary *)getScreenID;
 - (NSDictionary *)getScreenDimensions;
