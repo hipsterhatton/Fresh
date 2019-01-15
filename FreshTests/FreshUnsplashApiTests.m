@@ -72,4 +72,28 @@
     [self waitForExpectationsWithTimeout:120 handler:nil];
 }
 
+- (void)testGetRelevantCollections
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api getRelatedCollectionIDsForCollectionID:@"764827"]
+    
+    .then(^id (NSArray *_d) {
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+}
+
 @end

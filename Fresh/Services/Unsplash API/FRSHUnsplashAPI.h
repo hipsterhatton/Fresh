@@ -18,4 +18,5 @@
 
 - (RXPromise *)getWallpaperURLForScreen:(FRSHScreen *)screen;
 - (RXPromise *)searchCollections:(NSString *)searchTerm pageNumber:(int)pageNumber;
+- (RXPromise *)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID;
 @end

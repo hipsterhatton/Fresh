@@ -158,9 +158,29 @@
     });
 }
 
-- (void)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID
+- (RXPromise *)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID
 {
+    NSString *url = @"https://api.unsplash.com/collections/#{CollectionID}/related?client_id=#{ClientID}";
     
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{CollectionID}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, collectionID ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    __block NSMutableArray *_results = [NSMutableArray new];
+    
+    return [self.shuttle launch:GET :JSON :url :nil]
+    
+    .then(^id (NSArray *rawJSON) {
+        for (int _a = 0; _a < [rawJSON count]; _a++) {
+            [_results addObject:rawJSON[_a][@"id"]];
+        }
+        return _results;
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
 }
 
 @end
