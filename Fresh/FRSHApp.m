@@ -15,11 +15,10 @@
 - (id)init
 {
     if (self = [super init]) {
+        [self setupScreensWithNotifications:YES];
+        [self setupServices];
+        [self startTimer];
     }
-    
-    [self setupScreensWithNotifications:YES];
-    [self setupServices];
-    [self startTimer];
     return self;
 }
 
