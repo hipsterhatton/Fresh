@@ -16,6 +16,8 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    NSLog(@"Launching Fresh...");
+    _app = [[FRSHApp alloc] init];
     // Insert code here to initialize your application
 //    if (![[NSBundle mainBundle] isLoginItem]) {
 //        [[NSBundle mainBundle] addToLoginItems];

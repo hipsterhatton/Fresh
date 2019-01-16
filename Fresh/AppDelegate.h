@@ -9,7 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #import <IYLoginItem/NSBundle+LoginItem.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+#import "FRSHApp.h"
 
+@interface AppDelegate : NSObject <NSApplicationDelegate>
+@property (nonatomic, retain) FRSHApp *app;
 @end
 

@@ -112,8 +112,9 @@
     NSLog(@">>>>>>> Checking if existing schedule exists");
 
     if (!_downloadSchedule) {
-        NSLog(@">>>>>>> Existing schedule does not exist");
+        NSLog(@">>>>>>> No schedule exists...");
         _downloadSchedule = [self getDefaultDownloadSchedule];
+        NSLog(@">>>>>>> ...fetching default schedule");
     } else {
         _downloadSchedule = [_downloadSchedule mutableDeepCopy];
     }

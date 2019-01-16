@@ -166,7 +166,7 @@
 //
 - (void)url_success:(RXPromise *)promise :(NSObject *)data :(NSString *)url
 {
-    NSLog(@"...Comlpeted Request...");
+    NSLog(@"...Completed Request...");
     [promise fulfillWithValue:data];
 }
 

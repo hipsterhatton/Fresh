@@ -8,7 +8,7 @@
 
 #import "FRSHApp.h"
 
-#define SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS    60
+#define SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS    10
 
 @implementation FRSHApp
 
@@ -18,6 +18,7 @@
         [self setupScreensWithNotifications:YES];
         [self setupServices];
         [self startTimer];
+        [[[_screens firstObject] schedule] setScheduleEveryXMinutes:1 startingFrom:nil];
     }
     return self;
 }
@@ -93,6 +94,8 @@
     
     .then(^id (id blank) {
         [[screen state] setObject:@"done: update wallpaper" forKey:@"status"];
+        NSLog(@"...done!");
+        NSLog(@"%@", [screen state]);
         return @"OK";
     }, nil)
     
@@ -133,6 +136,7 @@
         NSLog(@"Screen: %@ - next download: %@", [_screen getScreenID][@"id"], [[_screen schedule] downloadSchedule][@"next_download_datetime"]);
         
         if ([[_screen schedule] timeToDownload]) {
+            NSLog(@"Downloading fresh wallpaper...");
             [self downloadWallpaperForScreen:_screen];
         }
     }
