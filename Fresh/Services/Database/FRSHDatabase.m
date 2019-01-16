@@ -73,7 +73,7 @@
           dataToWrite[@"wallpaper_id"],
           dataToWrite[@"wallpaper_url"],
           dataToWrite[@"screen_id"],
-          [formatter stringFromDate:dataToWrite[@"downloaded_at"]]]) {
+          [formatter stringFromDate:[NSDate date]]]) {
         NSLog(@"Error: INSERT INTO: %@", [_database lastErrorMessage]);
         [self closeDatabase];
         return false;
