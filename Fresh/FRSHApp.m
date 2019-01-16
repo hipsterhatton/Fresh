@@ -8,7 +8,7 @@
 
 #import "FRSHApp.h"
 
-#define SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS    10
+#define SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS    5
 
 @implementation FRSHApp
 
