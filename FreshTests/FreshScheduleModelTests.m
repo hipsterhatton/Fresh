@@ -1,5 +1,5 @@
 //
-//  ScheduleModelTests.m
+//  FreshScheduleModelTests.m
 //  Fresh
 //
 //  Created by Stephen Hatton on 08/08/2018.
@@ -10,11 +10,11 @@
 #import "FRSHSchedule.h"
 #import "GVUserDefaults+FastData.h"
 
-@interface ScheduleModelTests : XCTestCase
+@interface FreshScheduleModelTests : XCTestCase
 @property (nonatomic, retain) FRSHSchedule *schedule;
 @end
 
-@implementation ScheduleModelTests
+@implementation FreshScheduleModelTests
 
 - (void)setUp
 {
