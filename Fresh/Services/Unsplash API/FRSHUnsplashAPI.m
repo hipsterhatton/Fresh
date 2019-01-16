@@ -29,12 +29,12 @@
 //
 - (RXPromise *)getWallpaperURLForScreen:(FRSHScreen *)screen
 {
-    [[screen state] setObject:@"about to fetch unsplash url" forKey:@"status"];
+    [[screen state] setObject:@"start: get Unsplash wallpaper URL" forKey:@"status"];
     
     return [self.shuttle launch:GET :JSON :[self constructWallpaperURL:screen] :nil]
     
     .then(^id (NSDictionary *rawJSON) {
-        [[screen state] setObject:@"got custom url" forKey:@"status"];
+        [[screen state] setObject:@"done: get Unsplash wallpaper URL" forKey:@"status"];
         return @{@"id" : rawJSON[@"id"], @"url" : rawJSON[@"urls"][@"custom"]};
     }, nil)
     

@@ -154,7 +154,11 @@
     }, nil)
     
     .then(^id (NSDictionary *response) {
-        
+        NSLog(@"%@", [_app.screens[0] getScreenState]);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *response) {
         [expectation fulfill];
         return @"OK";
     }, nil)

@@ -111,9 +111,13 @@ extern CGSConnection _CGSDefaultConnection(void);
 //
 - (NSError *)updateScreenWithWallpaper:(NSString *)pathToImage
 {
+    [_state setObject:@"start: update wallpaper" forKey:@"status"];
+    
     // Check if the actual image exists - fire error if not
     if (![[NSFileManager defaultManager] fileExistsAtPath:pathToImage isDirectory:NO]) {
         return [NSError errorWithDomain:@"No file at path - wallpaper updater" code:200 userInfo:@{}];
+    } else {
+        [_state setObject:@"error: update wallpaper" forKey:@"status"];
     }
     
     if ([self isFullscreen]) {

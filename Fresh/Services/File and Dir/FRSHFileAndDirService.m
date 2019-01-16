@@ -104,18 +104,19 @@
 
 - (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename forScreen:(FRSHScreen *)screen
 {
-    [[screen state] setObject:@"about to download image" forKey:@"status"];
+    [[screen state] setObject:@"start: downloading image from Unsplash" forKey:@"status"];
     
     return [self.shuttle launch:GET :Image :imageURL :nil]
     
     .then(^id(NSImage *rawImage) {
         NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [NSString stringWithFormat:@"%@.jpg", filename], nil];
         [[screen state] setObject:_path forKey:@"wallpaper_file_path"];
-        [[screen state] setObject:@"writing image to disk" forKey:@"status"];
+        [[screen state] setObject:@"done: downloading image from Unsplash" forKey:@"status"];
         return [self writeImageDataToDiskWithFilename:_path fileData:[rawImage TIFFRepresentation]];
     }, nil)
     
     .then(^id(id blank) {
+        [[screen state] setObject:@"start: deleting old Unsplash image(s)" forKey:@"status"];
         return [self deleteOldDownloadedWallpapers:filename];
     }, nil)
     

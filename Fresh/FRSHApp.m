@@ -64,7 +64,7 @@
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen
 {
-    [[screen state] setObject:@"time to download" forKey:@"status"];
+    [[screen state] setObject:@"start: download and update procedure" forKey:@"status"];
     
     return [_wallpaperAPI getWallpaperURLForScreen:screen]
     
@@ -75,12 +75,24 @@
     }, nil)
     
     .then(^id (id blank) {
-        [[screen state] setObject:@"done" forKey:@"status"];
+        [[screen state] setObject:@"done: deleting old Unsplash image(s)" forKey:@"status"];
+        return @"OK";
+    }, nil)
+    
+    .then(^id (id blank) {;
+        [[screen state] setObject:@"start: writing data to database" forKey:@"status"];
+        [_database writeToDatabase:[screen state]];
+        [[screen state] setObject:@"done: writing data to database" forKey:@"status"];
         return @"OK";
     }, nil)
     
     .then(^id (id blank) {
-        [_database writeToDatabase:[screen state]];
+        [screen updateScreenWithWallpaper:[screen state][@"wallpaper_file_path"]];
+        return @"OK";
+    }, nil)
+    
+    .then(^id (id blank) {
+        [[screen state] setObject:@"done: update wallpaper" forKey:@"status"];
         return @"OK";
     }, nil)
     
