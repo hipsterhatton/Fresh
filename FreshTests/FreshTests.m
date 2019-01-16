@@ -53,4 +53,52 @@
     [self waitForExpectationsWithTimeout:180 handler:nil];
 }
 */
+- (RXPromise *)promiseOne
+{
+    RXPromise *promise = [RXPromise new];
+    [promise fulfillWithValue:@"OK"];
+    return promise;
+}
+
+- (RXPromise *)promiseTwo
+{
+    RXPromise *promise = [RXPromise new];
+    [promise rejectWithReason:@"...two..."];
+    return promise;
+}
+
+- (RXPromise *)promiseThree
+{
+    RXPromise *promise = [RXPromise new];
+    [promise rejectWithReason:@"...three..."];
+    return promise;
+}
+
+- (void)testErrorThrowing
+{
+    NSLog(@" ");NSLog(@" ");NSLog(@" ");
+    NSLog(@"Calling ONE");
+    
+    [self promiseOne]
+    
+    .then(^id(id result) {
+        NSLog(@"Done ONE - Calling TWO");
+        return [self promiseTwo];
+    }, nil)
+    
+    .then(^id(id result) {
+        NSLog(@"Done TWO - Calling THREE");
+        return [self promiseThree];
+    }, nil)
+    
+    .then(^id(id result) {
+        NSLog(@"Done THREE");
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError* error) {
+        NSLog(@"...THROWING ERROR...");
+        return nil;
+    });
+}
 @end
