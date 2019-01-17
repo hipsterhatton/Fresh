@@ -45,13 +45,19 @@
 //
 - (void)initSystemBarMenu
 {
-    _theSystemBarMenu = [[NSMenu alloc] initWithTitle:@"testing"];
+    _theSystemBarMenu = [[NSMenu alloc] init];
+    [_theSystemBarMenu setAutoenablesItems:YES];
     
-    [_theSystemBarMenu addItemWithTitle:@"SomethingGoesHere" action:nil keyEquivalent:@""];
-    
+    [_theSystemBarMenu addItemWithTitle:@"About Fresh" action:@selector(showFreshAboutWindow) keyEquivalent:@""];
+    [_theSystemBarMenu addItemWithTitle:@"Preferences..." action:nil keyEquivalent:@""];
     [_theSystemBarMenu addItem:[NSMenuItem separatorItem]];
+    [_theSystemBarMenu addItemWithTitle:@"Quit Fresh" action:@selector(terminate:) keyEquivalent:@"q"];
     
-    [_theSystemBarMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@"q"];
+    // About Us Window
+    [[_theSystemBarMenu itemArray][0] setTarget:self];
+    
+    // Preferences Window
+    [[_theSystemBarMenu itemArray][1] setTarget:self];
 }
 
 
@@ -77,7 +83,7 @@
 #pragma mark - Private - On Click Methods
 
 ////
-// Action: on left click
+// Action: on left/right click
 //
 - (void)onLeftClick:(id)sender
 {
@@ -85,14 +91,47 @@
     [_popup toggleWindow:sender];
 }
 
-
-////
-// Action: on right click
-//
 - (void)onRightClick:(id)sender
 {
     NSLog(@"Right Click...");
     [_theSystemBarIcon popUpStatusItemMenu:_theSystemBarMenu];
+}
+
+
+#pragma mark - Private - Windows
+
+////
+// Load "About Fresh" window
+//
+- (void)showFreshAboutWindow//:(NSMenuItem *)menuitem
+{
+    // Name, version, copyright
+    // Share: facebook, twitter, support (load website @ contact page)
+    if (!_aboutUsWindow) {
+        _aboutUsWindow = [[AboutUsWindow alloc] initWithWindowNibName:@"AboutUsWindow" owner:self];
+    }
+    
+    [_aboutUsWindow showWindow:self];
+}
+
+////
+// Load "About Fresh" window
+//
+- (void)showFreshPrefsWindow
+{
+    // Load @ login - checkbox, onChange: run code...
+}
+
+////
+// Load "About Fresh" window
+//
+- (void)showFreshRegistrationWindow
+{
+    // Label: (yes - no)
+    // Input: registration code
+    // Validate (disabled, becomes active once full length code entered) - networking: check code (contact my server) - Yes/No
+    // How do I make sure that once the app has been registered, it's all good? Encrypt and store a value :: before running
+    // any promises - check!
 }
 
 @end

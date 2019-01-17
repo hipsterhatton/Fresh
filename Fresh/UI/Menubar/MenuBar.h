@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
+#import "AboutUsWindow.h"
 #import "ClickDetectorView.h"
 #import "PopupViewController.h"
 
@@ -17,5 +18,7 @@
 @property (nonatomic, retain) NSStatusItem *theSystemBarIcon;
 @property (nonatomic, retain) NSMenu *theSystemBarMenu;
 @property (nonatomic, retain) PopupViewController *popup;
+
+@property (nonatomic, retain) AboutUsWindow *aboutUsWindow;
 
 @end
