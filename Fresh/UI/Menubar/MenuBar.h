@@ -12,6 +12,7 @@
 #import "AboutUsWindow.h"
 #import "ClickDetectorView.h"
 #import "PopupViewController.h"
+#import "PreferencesWindow.h"
 
 @interface MenuBar : NSObject <NSApplicationDelegate>
 
@@ -20,5 +21,5 @@
 @property (nonatomic, retain) PopupViewController *popup;
 
 @property (nonatomic, retain) AboutUsWindow *aboutUsWindow;
-
+@property (nonatomic, retain) PreferencesWindow *preferencesWindow;
 @end

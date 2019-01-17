@@ -49,7 +49,7 @@
     [_theSystemBarMenu setAutoenablesItems:YES];
     
     [_theSystemBarMenu addItemWithTitle:@"About Fresh" action:@selector(showFreshAboutWindow) keyEquivalent:@""];
-    [_theSystemBarMenu addItemWithTitle:@"Preferences..." action:nil keyEquivalent:@""];
+    [_theSystemBarMenu addItemWithTitle:@"Preferences..." action:@selector(showFreshPrefsWindow) keyEquivalent:@""];
     [_theSystemBarMenu addItem:[NSMenuItem separatorItem]];
     [_theSystemBarMenu addItemWithTitle:@"Quit Fresh" action:@selector(terminate:) keyEquivalent:@"q"];
     
@@ -103,10 +103,8 @@
 ////
 // Load "About Fresh" window
 //
-- (void)showFreshAboutWindow//:(NSMenuItem *)menuitem
+- (void)showFreshAboutWindow
 {
-    // Name, version, copyright
-    // Share: facebook, twitter, support (load website @ contact page)
     if (!_aboutUsWindow) {
         _aboutUsWindow = [[AboutUsWindow alloc] initWithWindowNibName:@"AboutUsWindow" owner:self];
     }
@@ -119,7 +117,11 @@
 //
 - (void)showFreshPrefsWindow
 {
-    // Load @ login - checkbox, onChange: run code...
+    if (!_preferencesWindow) {
+        _preferencesWindow = [[PreferencesWindow alloc] initWithWindowNibName:@"PreferencesWindow" owner:self];
+    }
+    
+    [_preferencesWindow showWindow:self];
 }
 
 ////

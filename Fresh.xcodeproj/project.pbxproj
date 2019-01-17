@@ -30,6 +30,8 @@
 		DC372AC92113193800DC2DFC /* SDMacVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = DC372AC72113193800DC2DFC /* SDMacVersion.m */; };
 		DC4AD8EC21F0D7F3007A1811 /* AboutUsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4AD8EA21F0D7F3007A1811 /* AboutUsWindow.m */; };
 		DC4AD8ED21F0D7F3007A1811 /* AboutUsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4AD8EB21F0D7F3007A1811 /* AboutUsWindow.xib */; };
+		DC4AD8F221F0E3B0007A1811 /* PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4AD8F021F0E3B0007A1811 /* PreferencesWindow.m */; };
+		DC4AD8F321F0E3B0007A1811 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4AD8F121F0E3B0007A1811 /* PreferencesWindow.xib */; };
 		DC4E239A21E6BA9900DBC0E0 /* FastData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E239921E6BA9900DBC0E0 /* FastData.m */; };
 		DC4E239D21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E239C21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m */; };
 		DC4E23A321E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E23A221E6BC1100DBC0E0 /* NSDictionary+DeepMutableCopy.m */; };
@@ -97,6 +99,9 @@
 		DC4AD8E921F0D7F3007A1811 /* AboutUsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsWindow.h; path = "UI/About Us Window/AboutUsWindow.h"; sourceTree = "<group>"; };
 		DC4AD8EA21F0D7F3007A1811 /* AboutUsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsWindow.m; path = "UI/About Us Window/AboutUsWindow.m"; sourceTree = "<group>"; };
 		DC4AD8EB21F0D7F3007A1811 /* AboutUsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutUsWindow.xib; path = "UI/About Us Window/AboutUsWindow.xib"; sourceTree = "<group>"; };
+		DC4AD8EF21F0E3B0007A1811 /* PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesWindow.h; path = "UI/Preferences Window/PreferencesWindow.h"; sourceTree = "<group>"; };
+		DC4AD8F021F0E3B0007A1811 /* PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesWindow.m; path = "UI/Preferences Window/PreferencesWindow.m"; sourceTree = "<group>"; };
+		DC4AD8F121F0E3B0007A1811 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesWindow.xib; path = "UI/Preferences Window/PreferencesWindow.xib"; sourceTree = "<group>"; };
 		DC4E239821E6BA9900DBC0E0 /* FastData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastData.h; path = "Libs/Fast Data/FastData.h"; sourceTree = "<group>"; };
 		DC4E239921E6BA9900DBC0E0 /* FastData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastData.m; path = "Libs/Fast Data/FastData.m"; sourceTree = "<group>"; };
 		DC4E239B21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GVUserDefaults+FastData.h"; path = "Libs/Fast Data/GVUserDefaults+FastData.h"; sourceTree = "<group>"; };
@@ -269,6 +274,16 @@
 			name = "About Us Window";
 			sourceTree = "<group>";
 		};
+		DC4AD8EE21F0E392007A1811 /* Preferences Window */ = {
+			isa = PBXGroup;
+			children = (
+				DC4AD8EF21F0E3B0007A1811 /* PreferencesWindow.h */,
+				DC4AD8F021F0E3B0007A1811 /* PreferencesWindow.m */,
+				DC4AD8F121F0E3B0007A1811 /* PreferencesWindow.xib */,
+			);
+			name = "Preferences Window";
+			sourceTree = "<group>";
+		};
 		DC4E239721E6BA6E00DBC0E0 /* Fast Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4AD8E321F0D7B2007A1811 /* About Us Window */,
+				DC4AD8EE21F0E392007A1811 /* Preferences Window */,
 				DC65716921F090BA00B883CC /* Menubar */,
 				DC65716621F090BA00B883CC /* Click Detector */,
 				DC65716D21F090BA00B883CC /* Popup */,
@@ -505,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4AD8F321F0E3B0007A1811 /* PreferencesWindow.xib in Resources */,
 				DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */,
 				DCDE850C2113173800B6FE21 /* MainMenu.xib in Resources */,
 				DC65717321F090BA00B883CC /* MenuBarImage.png in Resources */,
@@ -653,6 +670,7 @@
 				DC372AC22113192900DC2DFC /* Shuttle.m in Sources */,
 				DC65717221F090BA00B883CC /* MenuBar.m in Sources */,
 				DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */,
+				DC4AD8F221F0E3B0007A1811 /* PreferencesWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
