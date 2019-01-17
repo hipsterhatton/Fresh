@@ -39,6 +39,11 @@
 		DC4FCEB321ECEB0E000A0A20 /* Fresh.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */; };
 		DC4FCEB521ECEBA9000A0A20 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB421ECEBA9000A0A20 /* sample_image.png */; };
 		DC4FCEB621ECEBA9000A0A20 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB421ECEBA9000A0A20 /* sample_image.png */; };
+		DC65717121F090BA00B883CC /* ClickDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65716721F090BA00B883CC /* ClickDetectorView.m */; };
+		DC65717221F090BA00B883CC /* MenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65716B21F090BA00B883CC /* MenuBar.m */; };
+		DC65717321F090BA00B883CC /* MenuBarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DC65716C21F090BA00B883CC /* MenuBarImage.png */; };
+		DC65717421F090BA00B883CC /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC65716F21F090BA00B883CC /* PopupView.xib */; };
+		DC65717521F090BA00B883CC /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65717021F090BA00B883CC /* PopupViewController.m */; };
 		DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85032113173800B6FE21 /* AppDelegate.m */; };
 		DCDE85072113173800B6FE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE85062113173800B6FE21 /* main.m */; };
 		DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDE85082113173800B6FE21 /* Assets.xcassets */; };
@@ -101,6 +106,14 @@
 		DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshDatabaseTests.m; sourceTree = "<group>"; };
 		DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fresh.sqlite; path = "Supporting Files/Fresh.sqlite"; sourceTree = "<group>"; };
 		DC4FCEB421ECEBA9000A0A20 /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_image.png; path = "Supporting Files/sample_image.png"; sourceTree = "<group>"; };
+		DC65716721F090BA00B883CC /* ClickDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickDetectorView.m; sourceTree = "<group>"; };
+		DC65716821F090BA00B883CC /* ClickDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickDetectorView.h; sourceTree = "<group>"; };
+		DC65716A21F090BA00B883CC /* MenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBar.h; sourceTree = "<group>"; };
+		DC65716B21F090BA00B883CC /* MenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBar.m; sourceTree = "<group>"; };
+		DC65716C21F090BA00B883CC /* MenuBarImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBarImage.png; sourceTree = "<group>"; };
+		DC65716E21F090BA00B883CC /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
+		DC65716F21F090BA00B883CC /* PopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
+		DC65717021F090BA00B883CC /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		DCDE84FF2113173800B6FE21 /* Fresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDE85022113173800B6FE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCDE85032113173800B6FE21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -272,6 +285,48 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
+		DC65716521F0905900B883CC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DC65716921F090BA00B883CC /* Menubar */,
+				DC65716621F090BA00B883CC /* Click Detector */,
+				DC65716D21F090BA00B883CC /* Popup */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		DC65716621F090BA00B883CC /* Click Detector */ = {
+			isa = PBXGroup;
+			children = (
+				DC65716721F090BA00B883CC /* ClickDetectorView.m */,
+				DC65716821F090BA00B883CC /* ClickDetectorView.h */,
+			);
+			name = "Click Detector";
+			path = "UI/Click Detector";
+			sourceTree = "<group>";
+		};
+		DC65716921F090BA00B883CC /* Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				DC65716A21F090BA00B883CC /* MenuBar.h */,
+				DC65716B21F090BA00B883CC /* MenuBar.m */,
+				DC65716C21F090BA00B883CC /* MenuBarImage.png */,
+			);
+			name = Menubar;
+			path = UI/Menubar;
+			sourceTree = "<group>";
+		};
+		DC65716D21F090BA00B883CC /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				DC65716E21F090BA00B883CC /* PopupViewController.h */,
+				DC65716F21F090BA00B883CC /* PopupView.xib */,
+				DC65717021F090BA00B883CC /* PopupViewController.m */,
+			);
+			name = Popup;
+			path = UI/Popup;
+			sourceTree = "<group>";
+		};
 		DCDE84F62113173800B6FE21 = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +354,7 @@
 				DCDE85032113173800B6FE21 /* AppDelegate.m */,
 				DC2AA50121E6092500EA8F1F /* FRSHApp.h */,
 				DC2AA50221E6092500EA8F1F /* FRSHApp.m */,
+				DC65716521F0905900B883CC /* UI */,
 				DC2AA50621E60BDD00EA8F1F /* Models */,
 				DC2AA4F621E5F9BA00EA8F1F /* Services */,
 				DC372AAD2113185E00DC2DFC /* Libs */,
@@ -435,6 +491,8 @@
 			files = (
 				DCDE85092113173800B6FE21 /* Assets.xcassets in Resources */,
 				DCDE850C2113173800B6FE21 /* MainMenu.xib in Resources */,
+				DC65717321F090BA00B883CC /* MenuBarImage.png in Resources */,
+				DC65717421F090BA00B883CC /* PopupView.xib in Resources */,
 				DC4FCEB221ECEB0E000A0A20 /* Fresh.sqlite in Resources */,
 				DC4FCEB521ECEBA9000A0A20 /* sample_image.png in Resources */,
 			);
@@ -565,14 +623,17 @@
 				DC2AA4FA21E5F9E100EA8F1F /* FRSHFileAndDirService.m in Sources */,
 				DC4E23A921E6C00B00DBC0E0 /* FRSHSchedule.m in Sources */,
 				DCDE85072113173800B6FE21 /* main.m in Sources */,
+				DC65717121F090BA00B883CC /* ClickDetectorView.m in Sources */,
 				DC372AC42113192900DC2DFC /* ShuttleMockRequests.m in Sources */,
 				DC4E239A21E6BA9900DBC0E0 /* FastData.m in Sources */,
 				DCDE85042113173800B6FE21 /* AppDelegate.m in Sources */,
 				DC372ABC2113191500DC2DFC /* Reachability.m in Sources */,
 				DC4E239D21E6BAAF00DBC0E0 /* GVUserDefaults+FastData.m in Sources */,
+				DC65717521F090BA00B883CC /* PopupViewController.m in Sources */,
 				DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */,
 				DC372AC22113192900DC2DFC /* Shuttle.m in Sources */,
+				DC65717221F090BA00B883CC /* MenuBar.m in Sources */,
 				DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
