@@ -7,11 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <IYLoginItem/NSBundle+LoginItem.h>
 
 #import "FRSHApp.h"
+#import "MenuBar.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 @property (nonatomic, retain) FRSHApp *app;
+@property (nonatomic, retain) MenuBar *menubarUI;
 @end
 

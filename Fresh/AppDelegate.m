@@ -15,19 +15,26 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSLog(@"Launching Fresh...");
-    _app = [[FRSHApp alloc] init];
-    // Insert code here to initialize your application
-//    if (![[NSBundle mainBundle] isLoginItem]) {
-//        [[NSBundle mainBundle] addToLoginItems];
-//        NSLog(@"Added Fresh to login items...");
-//    } else {
-//        NSLog(@"Fresh already added to login items...");
-//    }
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+//    [self launchFreshApp];
+    [self launchFreshUI];
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
+- (void)launchFreshApp
+{
+    NSLog(@"Launching Fresh...");
+    _app = [[FRSHApp alloc] init];
+}
+
+- (void)launchFreshUI
+{
+    NSLog(@"Building Fresh UI...");
+    _menubarUI = [[MenuBar alloc] init];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
     // Insert code here to tear down your application
 }
 

@@ -8,8 +8,8 @@
 
 #import "MenuBar.h"
 
+#define SYSTEM_BAR_ICON_TOOLTIP         @"Fresh"
 #define SYSTEM_BAR_ICON_IMAGE           @"MenuBarImage.png"
-#define SYSTEM_BAR_ICON_TOOLTIP         @"SomeExampleTooltip"
 
 @implementation MenuBar
 

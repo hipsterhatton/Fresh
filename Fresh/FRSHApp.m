@@ -142,6 +142,16 @@
     }
 }
 
+- (void)loadAppAtLaunch
+{
+    if (![[NSBundle mainBundle] isLoginItem]) {
+        [[NSBundle mainBundle] addToLoginItems];
+        NSLog(@"Added Fresh to login items...");
+    } else {
+        NSLog(@"Fresh already added to login items...");
+    }
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

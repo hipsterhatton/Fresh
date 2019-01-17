@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
+#import <IYLoginItem/NSBundle+LoginItem.h>
 
 #import "FRSHScreen.h"
 
