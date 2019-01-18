@@ -677,5 +677,6 @@
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
+        <viewController nibName="AboutUsWindow" id="Ogi-Ux-Fx6"/>
     </objects>
 </document>

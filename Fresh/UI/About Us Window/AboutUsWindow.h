@@ -10,4 +10,6 @@
 
 @interface AboutUsWindow : NSWindowController
 
+- (void)showPreferencesWindow:(id)sender;
+
 @end

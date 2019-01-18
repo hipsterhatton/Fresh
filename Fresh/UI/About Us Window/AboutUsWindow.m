@@ -9,16 +9,30 @@
 #import "AboutUsWindow.h"
 
 @interface AboutUsWindow ()
-
+@property (weak) IBOutlet NSButton *testButton;
 @end
 
 @implementation AboutUsWindow
 
-- (void)windowDidLoad
+- (id)init
 {
-    [super windowDidLoad];
+    if (![super initWithWindowNibName:@"AboutUsWindow"]) {
+        return nil;
+    }
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    return self;
+}
+
+- (BOOL)acceptsFirstResponder
+{
+    return YES;
+}
+
+- (void)showPreferencesWindow:(id)sender
+{
+    [[self window] center];
+    [NSApp activateIgnoringOtherApps:YES];
+    [[self window] makeKeyAndOrderFront:sender];
 }
 
 @end

@@ -14,7 +14,7 @@
 #import "PopupViewController.h"
 #import "PreferencesWindow.h"
 
-@interface MenuBar : NSObject <NSApplicationDelegate>
+@interface MenuBar : NSObject <NSWindowDelegate>
 
 @property (nonatomic, retain) NSStatusItem *theSystemBarIcon;
 @property (nonatomic, retain) NSMenu *theSystemBarMenu;

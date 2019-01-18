@@ -105,11 +105,14 @@
 //
 - (void)showFreshAboutWindow
 {
+    NSLog(@"Showing Preferences Window...");
+
     if (!_aboutUsWindow) {
-        _aboutUsWindow = [[AboutUsWindow alloc] initWithWindowNibName:@"AboutUsWindow" owner:self];
+        _aboutUsWindow = [[AboutUsWindow alloc] init];
     }
-    
-    [_aboutUsWindow showWindow:self];
+
+    [_aboutUsWindow showPreferencesWindow:self];
+    [NSApp activateIgnoringOtherApps:YES];
 }
 
 ////

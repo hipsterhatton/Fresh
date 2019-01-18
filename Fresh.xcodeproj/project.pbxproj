@@ -43,6 +43,7 @@
 		DC4FCEB321ECEB0E000A0A20 /* Fresh.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */; };
 		DC4FCEB521ECEBA9000A0A20 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB421ECEBA9000A0A20 /* sample_image.png */; };
 		DC4FCEB621ECEBA9000A0A20 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4FCEB421ECEBA9000A0A20 /* sample_image.png */; };
+		DC548DAF21F290EA009C03B4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC548DAE21F290EA009C03B4 /* AboutUsViewController.m */; };
 		DC65717121F090BA00B883CC /* ClickDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65716721F090BA00B883CC /* ClickDetectorView.m */; };
 		DC65717221F090BA00B883CC /* MenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65716B21F090BA00B883CC /* MenuBar.m */; };
 		DC65717321F090BA00B883CC /* MenuBarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DC65716C21F090BA00B883CC /* MenuBarImage.png */; };
@@ -116,6 +117,8 @@
 		DC4FCEAF21ECE776000A0A20 /* FreshDatabaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshDatabaseTests.m; sourceTree = "<group>"; };
 		DC4FCEB121ECEB0E000A0A20 /* Fresh.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fresh.sqlite; path = "Supporting Files/Fresh.sqlite"; sourceTree = "<group>"; };
 		DC4FCEB421ECEBA9000A0A20 /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_image.png; path = "Supporting Files/sample_image.png"; sourceTree = "<group>"; };
+		DC548DAD21F290EA009C03B4 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsViewController.h; path = "UI/About Us Window/AboutUsViewController.h"; sourceTree = "<group>"; };
+		DC548DAE21F290EA009C03B4 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsViewController.m; path = "UI/About Us Window/AboutUsViewController.m"; sourceTree = "<group>"; };
 		DC65716721F090BA00B883CC /* ClickDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickDetectorView.m; sourceTree = "<group>"; };
 		DC65716821F090BA00B883CC /* ClickDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickDetectorView.h; sourceTree = "<group>"; };
 		DC65716A21F090BA00B883CC /* MenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBar.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				DC4AD8E921F0D7F3007A1811 /* AboutUsWindow.h */,
 				DC4AD8EA21F0D7F3007A1811 /* AboutUsWindow.m */,
 				DC4AD8EB21F0D7F3007A1811 /* AboutUsWindow.xib */,
+				DC548DAD21F290EA009C03B4 /* AboutUsViewController.h */,
+				DC548DAE21F290EA009C03B4 /* AboutUsViewController.m */,
 			);
 			name = "About Us Window";
 			sourceTree = "<group>";
@@ -668,6 +673,7 @@
 				DC372AB4211318ED00DC2DFC /* GVUserDefaults.m in Sources */,
 				DC372AC82113193800DC2DFC /* SDMacVersion.m in Sources */,
 				DC372AC22113192900DC2DFC /* Shuttle.m in Sources */,
+				DC548DAF21F290EA009C03B4 /* AboutUsViewController.m in Sources */,
 				DC65717221F090BA00B883CC /* MenuBar.m in Sources */,
 				DC2AA50321E6092500EA8F1F /* FRSHApp.m in Sources */,
 				DC4AD8F221F0E3B0007A1811 /* PreferencesWindow.m in Sources */,
