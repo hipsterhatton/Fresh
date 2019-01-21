@@ -22,4 +22,7 @@
 
 @property (nonatomic, retain) AboutUsWindow *aboutUsWindow;
 @property (nonatomic, retain) PreferencesWindow *preferencesWindow;
+
+- (void)updateMenubarIcon:(NSString *)imageToShow;
+- (void)revertMenubarIcon;
 @end

@@ -10,13 +10,16 @@
 #import <Foundation/Foundation.h>
 #import <IYLoginItem/NSBundle+LoginItem.h>
 
-#import "FRSHScreen.h"
+#import "MenuBar.h"
 
+#import "FRSHScreen.h"
 #import "FRSHDatabase.h"
 #import "FRSHFileAndDirService.h"
 #import "FRSHUnsplashAPI.h"
 
 @interface FRSHApp : NSObject
+
+@property (nonatomic, retain) MenuBar *menubarUI;
 
 @property (nonatomic, retain) NSTimer *checkScheduleTimer;
 @property (nonatomic, retain) NSMutableArray *screens;

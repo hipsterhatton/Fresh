@@ -80,6 +80,20 @@
 }
 
 
+////
+// Update the menubar icon (depending on the state)
+//
+- (void)updateMenubarIcon:(NSString *)imageToShow
+{
+    [_theSystemBarIcon setImage:[NSImage imageNamed:imageToShow]];
+}
+
+- (void)revertMenubarIcon
+{
+    [_theSystemBarIcon setImage:[NSImage imageNamed:SYSTEM_BAR_ICON_IMAGE]];
+}
+
+
 #pragma mark - Private - On Click Methods
 
 ////

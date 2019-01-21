@@ -23,6 +23,10 @@
     return self;
 }
 
+
+
+#pragma mark - Private - App Setup (Init) Methods
+
 - (void)setupScreensWithNotifications:(BOOL)setupNotification
 {
     if (!_screens) {
@@ -62,6 +66,15 @@
     _wallpaperAPI = [FRSHUnsplashAPI new];
     _database = [FRSHDatabase new];
 }
+
+- (void)setupUI
+{
+    _menubarUI = [[MenuBar alloc] init];
+}
+
+
+
+#pragma mark - Public - Download Wallpaper Method
 
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen
 {
@@ -105,13 +118,10 @@
     });
 }
 
-- (NSString *)getWallpaperFileName:(FRSHScreen *)screen
-{
-    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH-mm-ss"];
-    
-    return [NSString stringWithFormat:@"%@_%@", [screen getScreenID][@"uuid"], [dateFormatter stringFromDate:[NSDate date]]];
-}
+
+
+
+#pragma mark - Private - Timer Methods
 
 - (void)startTimer
 {
@@ -142,6 +152,10 @@
     }
 }
 
+
+
+#pragma mark - Private - Miscellaneous Methods
+
 - (void)loadAppAtLaunch
 {
     if (![[NSBundle mainBundle] isLoginItem]) {
@@ -150,6 +164,14 @@
     } else {
         NSLog(@"Fresh already added to login items...");
     }
+}
+
+- (NSString *)getWallpaperFileName:(FRSHScreen *)screen
+{
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH-mm-ss"];
+    
+    return [NSString stringWithFormat:@"%@_%@", [screen getScreenID][@"uuid"], [dateFormatter stringFromDate:[NSDate date]]];
 }
 
 - (void)dealloc
