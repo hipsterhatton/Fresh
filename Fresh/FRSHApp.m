@@ -9,6 +9,8 @@
 #import "FRSHApp.h"
 
 #define SCHEDULE_TIMER_CHECK_EVERY_X_SECONDS    5
+#define MENUBAR_ICON_DOWNLOAD_STARTED           @""
+#define MENUBAR_ICON_ERROR_DURING_DOWNLOAD      @""
 
 @implementation FRSHApp
 
@@ -79,6 +81,7 @@
 - (RXPromise *)downloadWallpaperForScreen:(FRSHScreen *)screen
 {
     [[screen state] setObject:@"start: download and update procedure" forKey:@"status"];
+    [self updateMenubarIconPerState:StartingDownload];
     
     return [_wallpaperAPI getWallpaperURLForScreen:screen]
     
@@ -109,15 +112,16 @@
         [[screen state] setObject:@"done: update wallpaper" forKey:@"status"];
         NSLog(@"...done!");
         NSLog(@"%@", [screen state]);
+        [self updateMenubarIconPerState:FinishedDownload];
         return @"OK";
     }, nil)
     
     .then(nil, ^id(NSError* error) {
         NSLog(@"Error: %@", [error localizedDescription]);
+        [self updateMenubarIconPerState:ErrorDuringDownload];
         return error;
     });
 }
-
 
 
 
@@ -172,6 +176,28 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH-mm-ss"];
     
     return [NSString stringWithFormat:@"%@_%@", [screen getScreenID][@"uuid"], [dateFormatter stringFromDate:[NSDate date]]];
+}
+
+- (void)updateMenubarIconPerState:(FreshState)state
+{
+    switch (state) {
+            
+        case StartingDownload:
+            [_menubarUI updateMenubarIcon:MENUBAR_ICON_DOWNLOAD_STARTED];
+            break;
+            
+        case FinishedDownload:
+            [_menubarUI revertMenubarIcon];
+            break;
+            
+        case ErrorDuringDownload:
+            [_menubarUI updateMenubarIcon:MENUBAR_ICON_ERROR_DURING_DOWNLOAD];
+            break;
+            
+        default:
+            [_menubarUI revertMenubarIcon];
+            break;
+    }
 }
 
 - (void)dealloc

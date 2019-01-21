@@ -27,6 +27,70 @@
     return self;
 }
 
+
+#pragma mark - Public/Private - Image Download Methods
+
+- (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename forScreen:(FRSHScreen *)screen
+{
+    [[screen state] setObject:@"start: downloading image from Unsplash" forKey:@"status"];
+    
+    return [self.shuttle launch:GET :Image :imageURL :nil]
+    
+    .then(^id(NSImage *rawImage) {
+        NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [NSString stringWithFormat:@"%@.jpg", filename], nil];
+        [[screen state] setObject:_path forKey:@"wallpaper_file_path"];
+        [[screen state] setObject:@"done: downloading image from Unsplash" forKey:@"status"];
+        return [self writeImageDataToDiskWithFilename:_path fileData:[rawImage TIFFRepresentation]];
+    }, nil)
+    
+    .then(^id(id blank) {
+        [[screen state] setObject:@"start: deleting old Unsplash image(s)" forKey:@"status"];
+        return [self deleteOldDownloadedWallpapers:filename];
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+}
+
+- (NSError *)writeImageDataToDiskWithFilename:(NSString *)filepath fileData:(NSData *)fileData
+{
+    NSError *_error;
+    [fileData writeToFile:filepath options:NSDataWritingAtomic error:&_error];
+    return _error;
+}
+
+- (NSError *)deleteOldDownloadedWallpapers:(NSString *)wallpaperFileName
+{
+    NSError *_error = nil;
+    NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, nil];
+    NSArray *_listOfFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_path error:&_error];
+    __block NSString *_str;
+    
+    if (_error) {
+        return _error;
+    }
+    
+    wallpaperFileName = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [wallpaperFileName stringByAppendingString:@".jpg"]];
+    
+    for (int _a = 0; _a < [_listOfFiles count]; _a++) {
+        _str = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, _listOfFiles[_a]];
+        
+        if (![_str isEqualToString:wallpaperFileName]) {
+            [[NSFileManager defaultManager] removeItemAtPath:_str error:&_error];
+            if (_error) {
+                break;
+            }
+        }
+    }
+    
+    return _error;
+}
+
+
+
+#pragma mark - Private - Directory/Database Setup (Init) Methods
+
 - (NSError *)setupAppDirectories
 {
     NSError *_error;
@@ -93,63 +157,6 @@
     }
     va_end(args);
     return documentsDirectory;
-}
-
-- (NSError *)writeImageDataToDiskWithFilename:(NSString *)filepath fileData:(NSData *)fileData
-{
-    NSError *_error;
-    [fileData writeToFile:filepath options:NSDataWritingAtomic error:&_error];
-    return _error;
-}
-
-- (RXPromise *)downloadImageFromURL:(NSString *)imageURL filename:(NSString *)filename forScreen:(FRSHScreen *)screen
-{
-    [[screen state] setObject:@"start: downloading image from Unsplash" forKey:@"status"];
-    
-    return [self.shuttle launch:GET :Image :imageURL :nil]
-    
-    .then(^id(NSImage *rawImage) {
-        NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [NSString stringWithFormat:@"%@.jpg", filename], nil];
-        [[screen state] setObject:_path forKey:@"wallpaper_file_path"];
-        [[screen state] setObject:@"done: downloading image from Unsplash" forKey:@"status"];
-        return [self writeImageDataToDiskWithFilename:_path fileData:[rawImage TIFFRepresentation]];
-    }, nil)
-    
-    .then(^id(id blank) {
-        [[screen state] setObject:@"start: deleting old Unsplash image(s)" forKey:@"status"];
-        return [self deleteOldDownloadedWallpapers:filename];
-    }, nil)
-    
-    .then(nil, ^id(NSError *error) {
-        return error;
-    });
-}
-
-- (NSError *)deleteOldDownloadedWallpapers:(NSString *)wallpaperFileName
-{
-    NSError *_error = nil;
-    NSString *_path = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, nil];
-    NSArray *_listOfFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_path error:&_error];
-    __block NSString *_str;
-    
-    if (_error) {
-        return _error;
-    }
-    
-    wallpaperFileName = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, [wallpaperFileName stringByAppendingString:@".jpg"]];
-    
-    for (int _a = 0; _a < [_listOfFiles count]; _a++) {
-        _str = [self getDirectoryPath:APP_DIR, IMAGE_DL_DIR, _listOfFiles[_a]];
-        
-        if (![_str isEqualToString:wallpaperFileName]) {
-            [[NSFileManager defaultManager] removeItemAtPath:_str error:&_error];
-            if (_error) {
-                break;
-            }
-        }
-    }
-    
-    return _error;
 }
 
 @end

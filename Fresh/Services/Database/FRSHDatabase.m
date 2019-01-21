@@ -22,6 +22,10 @@
     return self;
 }
 
+
+
+#pragma mark - Private - General Database Methods
+
 ////
 // Open database connection
 //
@@ -58,6 +62,10 @@
     documentsDirectory =  [documentsDirectory stringByAppendingPathComponent:DATABASE_NAME];
     return documentsDirectory;
 }
+
+
+
+#pragma mark - Public - Read/Write Methods
 
 ////
 // SQL Read/Write methods: write, read, delete

@@ -24,6 +24,10 @@
     return self;
 }
 
+
+
+#pragma mark - Public - Image/Collection Methods
+
 ////
 // Return URL of a random wallpaper from collection(s)
 //
@@ -46,34 +50,6 @@
     .then(nil, ^id(NSError *error) {
         return error;
     });
-}
-
-- (NSString *)constructWallpaperURL:(FRSHScreen *)screen
-{
-    int _width = [[screen getScreenDimensions][@"width"] intValue];
-    int _height = [[screen getScreenDimensions][@"height"] intValue];
-    NSString *_collections = [[screen getScreenCollections] componentsJoinedByString:@","];
-    
-    NSString *url = @"https://api.unsplash.com/photos/random?client_id=#{ClientID}&orientation=landscape&collections=#{Collections}&w=#{Width}&h=#{Height}";
-    
-    NSArray *placeholders = @[ @"#{ClientID}", @"#{Collections}", @"#{Width}", @"#{Height}" ];
-    NSArray *values =       @[ UNSPLASH_API_KEY, _collections, i_to_s(_width), i_to_s(_height) ];
-    
-    return [self _replace:url :placeholders :values];
-}
-
-- (NSString *)_replace:(NSString *)string :(NSArray *)placeholders :(NSArray *)values
-{
-    if ([placeholders count] != [values count]) {
-        NSLog(@" ---[Wrong amount of Placeholders and Values] - API");
-        return nil;
-    }
-    
-    for (int a = 0; a < [values count]; a++) {
-        string = [string stringByReplacingOccurrencesOfString:placeholders[a] withString:values[a]];
-    }
-    
-    return string;
 }
 
 ////
@@ -123,6 +99,52 @@
     });
 }
 
+////
+// Get releated collection ID's for a collection
+//
+- (RXPromise *)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID
+{
+    NSString *url = @"https://api.unsplash.com/collections/#{CollectionID}/related?client_id=#{ClientID}";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{CollectionID}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, collectionID ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    __block NSMutableArray *_results = [NSMutableArray new];
+    
+    return [self.shuttle launch:GET :JSON :url :nil]
+    
+    .then(^id (NSArray *rawJSON) {
+        for (int _a = 0; _a < [rawJSON count]; _a++) {
+            [_results addObject:rawJSON[_a][@"id"]];
+        }
+        return _results;
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+}
+
+
+
+#pragma mark - Private - Generic Methods
+
+- (NSString *)constructWallpaperURL:(FRSHScreen *)screen
+{
+    int _width = [[screen getScreenDimensions][@"width"] intValue];
+    int _height = [[screen getScreenDimensions][@"height"] intValue];
+    NSString *_collections = [[screen getScreenCollections] componentsJoinedByString:@","];
+    
+    NSString *url = @"https://api.unsplash.com/photos/random?client_id=#{ClientID}&orientation=landscape&collections=#{Collections}&w=#{Width}&h=#{Height}";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{Collections}", @"#{Width}", @"#{Height}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, _collections, i_to_s(_width), i_to_s(_height) ];
+    
+    return [self _replace:url :placeholders :values];
+}
+
 - (RXPromise *)getPhotosFromCollection:(NSString *)collectionID
 {
     NSString *url = @"https://api.unsplash.com/collections/#{CollectionID}/photos?#{ClientID}&per_page=5";
@@ -149,29 +171,18 @@
     });
 }
 
-- (RXPromise *)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID
+- (NSString *)_replace:(NSString *)string :(NSArray *)placeholders :(NSArray *)values
 {
-    NSString *url = @"https://api.unsplash.com/collections/#{CollectionID}/related?client_id=#{ClientID}";
+    if ([placeholders count] != [values count]) {
+        NSLog(@" ---[Wrong amount of Placeholders and Values] - API");
+        return nil;
+    }
     
-    NSArray *placeholders = @[ @"#{ClientID}", @"#{CollectionID}" ];
-    NSArray *values =       @[ UNSPLASH_API_KEY, collectionID ];
+    for (int a = 0; a < [values count]; a++) {
+        string = [string stringByReplacingOccurrencesOfString:placeholders[a] withString:values[a]];
+    }
     
-    url = [self _replace:url :placeholders :values];
-    
-    __block NSMutableArray *_results = [NSMutableArray new];
-    
-    return [self.shuttle launch:GET :JSON :url :nil]
-    
-    .then(^id (NSArray *rawJSON) {
-        for (int _a = 0; _a < [rawJSON count]; _a++) {
-            [_results addObject:rawJSON[_a][@"id"]];
-        }
-        return _results;
-    }, nil)
-    
-    .then(nil, ^id(NSError *error) {
-        return error;
-    });
+    return string;
 }
 
 @end

@@ -19,6 +19,12 @@
 
 @interface FRSHApp : NSObject
 
+typedef enum {
+    StartingDownload,
+    FinishedDownload,
+    ErrorDuringDownload
+} FreshState;
+
 @property (nonatomic, retain) MenuBar *menubarUI;
 
 @property (nonatomic, retain) NSTimer *checkScheduleTimer;
