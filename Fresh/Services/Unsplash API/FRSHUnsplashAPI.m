@@ -127,6 +127,34 @@
     });
 }
 
+////
+// Get releated collection ID's for a collection
+//
+- (RXPromise *)searchPhotos:(NSString *)searchTerm pageNumber:(int)pageNumber
+{
+    NSString *url = @"https://api.unsplash.com/search/photos?query=#{SearchTerm}&client_id=#{ClientID}";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{SearchTerm}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, searchTerm ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    __block NSMutableArray *_results = [NSMutableArray new];
+    
+    return [self.shuttle launch:GET :JSON :url :nil]
+    
+    .then(^id (NSDictionary *rawJSON) {
+        for (int _a = 0; _a < [rawJSON[@"results"] count]; _a++) {
+            [_results addObject:rawJSON[@"results"][_a]];
+        }
+        return _results;
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        return error;
+    });
+}
+
 
 
 #pragma mark - Private - Generic Methods

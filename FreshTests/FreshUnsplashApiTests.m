@@ -137,4 +137,31 @@
     [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
+- (void)testSearchPhotos
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api searchPhotos:@"coffee" pageNumber:1]
+    
+    .then(^id (NSArray *_data) {
+        XCTAssertNotNil(_data);
+        XCTAssertGreaterThan([_data count], 1);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNil(error);
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
 @end
