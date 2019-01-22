@@ -145,7 +145,10 @@
     
     .then(^id (NSDictionary *rawJSON) {
         for (int _a = 0; _a < [rawJSON[@"results"] count]; _a++) {
-            [_results addObject:rawJSON[@"results"][_a]];
+            [_results addObject:@{
+                                  @"id" :   rawJSON[@"results"][_a][@"id"],
+                                  @"url" :  rawJSON[@"results"][_a][@"urls"][@"full"]
+                                  }];
         }
         return _results;
     }, nil)
@@ -153,6 +156,29 @@
     .then(nil, ^id(NSError *error) {
         return error;
     });
+}
+
+////
+// Get download URL for a specific image (takes: imageID)
+//
+- (void)getWallpaperURLForScreen:(FRSHScreen *)screen withImageID:(NSString *)imageID withImageURL:(NSString *)imageURL
+{
+    [[screen state] setObject:@"start: get Unsplash wallpaper URL" forKey:@"status"];
+    
+    int _width = [[screen getScreenDimensions][@"width"] intValue];
+    int _height = [[screen getScreenDimensions][@"height"] intValue];
+    
+    NSString *url = @"#{ImageURL}?client_id=#{ClientID}&w=#{Width}&h=#{Height}";
+    
+    NSArray *placeholders = @[ @"#{ClientID}", @"#{ImageURL}", @"#{Width}", @"#{Height}" ];
+    NSArray *values =       @[ UNSPLASH_API_KEY, imageURL, i_to_s(_width), i_to_s(_height) ];
+    
+    url = [self _replace:url :placeholders :values];
+    
+    [[screen state] setObject:@"done: get Unsplash wallpaper URL" forKey:@"status"];
+    
+    [[screen state] setObject:imageID forKey:@"wallpaper_id"];
+    [[screen state] setObject:url forKey:@"wallpaper_url"];
 }
 
 

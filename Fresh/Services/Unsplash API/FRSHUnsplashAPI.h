@@ -20,4 +20,5 @@
 - (RXPromise *)searchCollections:(NSString *)searchTerm pageNumber:(int)pageNumber;
 - (RXPromise *)getRelatedCollectionIDsForCollectionID:(NSString *)collectionID;
 - (RXPromise *)searchPhotos:(NSString *)searchTerm pageNumber:(int)pageNumber;
+- (void)getWallpaperURLForScreen:(FRSHScreen *)screen withImageID:(NSString *)imageID withImageURL:(NSString *)imageURL;
 @end

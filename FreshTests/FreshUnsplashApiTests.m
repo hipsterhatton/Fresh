@@ -148,6 +148,42 @@
     .then(^id (NSArray *_data) {
         XCTAssertNotNil(_data);
         XCTAssertGreaterThan([_data count], 1);
+        XCTAssertNotNil([_data firstObject][@"id"]);
+        XCTAssertNotNil([_data firstObject][@"url"]);
+        return @"OK";
+    }, nil)
+    
+    .then(^id (NSDictionary *_data) {
+        [expectation fulfill];
+        return @"OK";
+    }, nil)
+    
+    .then(nil, ^id(NSError *error) {
+        XCTAssertNil(error);
+        return error;
+    });
+    
+    [self waitForExpectationsWithTimeout:120 handler:nil];
+}
+
+- (void)testGetPhotoURL
+{
+    [_api.shuttle.mockRequests disableMockShuttleRequests];
+    FRSHScreen *_sc = [[FRSHScreen alloc] initWithScreen:[NSScreen mainScreen]];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Query timed out"];
+    
+    [_api searchPhotos:@"coffee" pageNumber:1]
+    
+    .then(^id (NSArray *_data) {
+        __block NSString *_id =     _data[0][@"id"];
+        __block NSString *_url =    _data[0][@"url"];
+        [_api getWallpaperURLForScreen:_sc withImageID:_id withImageURL:_url];
+        __block NSString *_apiURL = [_sc state][@"wallpaper_url"];
+        XCTAssertNotNil(_apiURL);
+        XCTAssertFalse([_apiURL rangeOfString:@"https://images.unsplash.com/photo-"].location == NSNotFound);
+        XCTAssertFalse([_apiURL rangeOfString:@"&w="].location == NSNotFound);
+        XCTAssertFalse([_apiURL rangeOfString:@"&h="].location == NSNotFound);
         return @"OK";
     }, nil)
     
