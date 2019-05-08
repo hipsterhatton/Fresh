@@ -12,6 +12,12 @@
 
 @property (nonatomic, strong) NSPopover *popover;
 
+@property (weak) IBOutlet NSTextField *historyLabel;
+@property (weak) IBOutlet NSTextField *currentLabel;
+@property (weak) IBOutlet NSTextField *favouritesLabel;
+@property (weak) IBOutlet NSTextField *labelSelectedMarker;
+
+
 - (void)toggleWindow:(id)sender;
 
 @end

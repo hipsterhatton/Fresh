@@ -29,6 +29,22 @@
     [self.popover showRelativeToRect:aRect
                               ofView:sender
                        preferredEdge:NSMaxYEdge];
+    
+    // Setup the labels with a click handler
+    NSClickGestureRecognizer *click = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(labelClick)];
+    [_currentLabel addGestureRecognizer:click];
+    [_historyLabel addGestureRecognizer:click];
+    [_favouritesLabel addGestureRecognizer:click];
+}
+
+- (void)labelClick
+{
+    NSLog(@"Click");
+    if (self.popover.contentSize.height > 176) {
+        [self.popover setContentSize:NSMakeSize(self.popover.contentSize.width, 176)];
+    } else {
+        [self.popover setContentSize:NSMakeSize(self.popover.contentSize.width, 250)];
+    }
 }
 
 - (void)closePopover
